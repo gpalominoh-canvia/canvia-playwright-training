@@ -51,14 +51,14 @@ src/nivel-3-screenplay/
 
 ### Glosario
 
-| Concepto      | Rol                                                          |
-|---------------|--------------------------------------------------------------|
-| **Actor**     | Representa al usuario. Tiene habilidades, intenta tareas.     |
-| **Ability**   | Lo que el actor puede hacer (ej. `BrowseTheWeb`).            |
-| **Interaction**| Acción atómica (`Click`, `Enter`, `Navigate`).              |
-| **Task**      | Composición de interactions con sentido de negocio (`LoginAs`).|
-| **Question**  | Consulta el estado del sistema y devuelve un valor.          |
-| **Target**    | Elemento de UI identificado por nombre + selector.           |
+| Concepto        | Rol                                                             |
+| --------------- | --------------------------------------------------------------- |
+| **Actor**       | Representa al usuario. Tiene habilidades, intenta tareas.       |
+| **Ability**     | Lo que el actor puede hacer (ej. `BrowseTheWeb`).               |
+| **Interaction** | Acción atómica (`Click`, `Enter`, `Navigate`).                  |
+| **Task**        | Composición de interactions con sentido de negocio (`LoginAs`). |
+| **Question**    | Consulta el estado del sistema y devuelve un valor.             |
+| **Target**      | Elemento de UI identificado por nombre + selector.              |
 
 ### Flujo
 
@@ -66,6 +66,20 @@ src/nivel-3-screenplay/
 Actor.named(...).whoCan(Ability)
    .attemptsTo(Task -> [Interaction, Interaction, ...])
    .asksFor(Question) -> valor para aserción
+```
+
+```mermaid
+flowchart LR
+  A[Actor] -->|whoCan| AB[Ability: BrowseTheWeb]
+  A -->|attemptsTo| T[Task: LoginAs]
+  T --> I1[Navigate]
+  T --> I2[Enter]
+  T --> I3[Click]
+  I1 & I2 & I3 -->|usan| AB
+  AB --> P[(Página de Playwright)]
+  A -->|asksFor| Q[Question: TextOf / CountOf]
+  Q -->|consulta| AB
+  Q --> V[Valor para la aserción]
 ```
 
 ## Ejecutar
@@ -87,13 +101,13 @@ En una rama `feature/<tu-nombre>-nivel3`:
 
 ## POM vs Screenplay
 
-| Aspecto          | POM                          | Screenplay                       |
-|------------------|------------------------------|----------------------------------|
-| Unidad principal | Página (clase)               | Acción/tarea del actor           |
-| Legibilidad      | Buena                        | Muy alta (lenguaje de negocio)   |
-| Reutilización    | Media (métodos por página)   | Alta (interactions/tasks atómicas)|
-| Curva de aprendizaje | Baja                     | Media                            |
-| Ideal para       | Proyectos medianos           | Suites grandes y equipos         |
+| Aspecto              | POM                        | Screenplay                         |
+| -------------------- | -------------------------- | ---------------------------------- |
+| Unidad principal     | Página (clase)             | Acción/tarea del actor             |
+| Legibilidad          | Buena                      | Muy alta (lenguaje de negocio)     |
+| Reutilización        | Media (métodos por página) | Alta (interactions/tasks atómicas) |
+| Curva de aprendizaje | Baja                       | Media                              |
+| Ideal para           | Proyectos medianos         | Suites grandes y equipos           |
 
 ---
 

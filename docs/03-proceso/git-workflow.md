@@ -14,19 +14,19 @@ temporales.
 
 ### Ramas permanentes
 
-| Rama      | Propósito                                                                 | ¿Se commitea directo? |
-|-----------|---------------------------------------------------------------------------|-----------------------|
-| `main`    | Código **estable y liberado**. Cada commit es una versión etiquetada.     | ❌ Nunca              |
-| `develop` | Rama de **integración**. Aquí confluye todo el trabajo terminado.         | ❌ Solo vía PR        |
+| Rama      | Propósito                                                             | ¿Se commitea directo? |
+| --------- | --------------------------------------------------------------------- | --------------------- |
+| `main`    | Código **estable y liberado**. Cada commit es una versión etiquetada. | ❌ Nunca              |
+| `develop` | Rama de **integración**. Aquí confluye todo el trabajo terminado.     | ❌ Solo vía PR        |
 
 ### Ramas temporales
 
-| Tipo         | Nace de    | Se mergea a          | Sirve para                                   |
-|--------------|------------|----------------------|----------------------------------------------|
-| `feature/*`  | `develop`  | `develop`            | Nueva funcionalidad, ejercicio o caso de test|
-| `bugfix/*`   | `develop`  | `develop`            | Corregir un defecto detectado en `develop`   |
-| `release/*`  | `develop`  | `main` **y** `develop` | Preparar una entrega/versión                |
-| `hotfix/*`   | `main`     | `main` **y** `develop` | Arreglo urgente sobre algo ya liberado      |
+| Tipo        | Nace de   | Se mergea a            | Sirve para                                    |
+| ----------- | --------- | ---------------------- | --------------------------------------------- |
+| `feature/*` | `develop` | `develop`              | Nueva funcionalidad, ejercicio o caso de test |
+| `bugfix/*`  | `develop` | `develop`              | Corregir un defecto detectado en `develop`    |
+| `release/*` | `develop` | `main` **y** `develop` | Preparar una entrega/versión                  |
+| `hotfix/*`  | `main`    | `main` **y** `develop` | Arreglo urgente sobre algo ya liberado        |
 
 ```
   hotfix/*  ───────────────●────────────────►  (merge a main y develop)
@@ -42,6 +42,29 @@ feature/*    ●──●       /        /
 bugfix/*     ●────────●        /
                               /
 feature/*    ●───────────────●
+```
+
+Y el mismo flujo como diagrama de Git (se renderiza en GitHub):
+
+```mermaid
+gitGraph
+  commit id: "init"
+  branch develop
+  checkout develop
+  commit
+  branch feature/login
+  checkout feature/login
+  commit
+  commit
+  checkout develop
+  merge feature/login
+  branch release/1.0.0
+  checkout release/1.0.0
+  commit id: "fixes"
+  checkout main
+  merge release/1.0.0 tag: "v1.0.0"
+  checkout develop
+  merge release/1.0.0
 ```
 
 ---
@@ -64,6 +87,7 @@ hotfix/timeout-api-rewards
 ```
 
 Reglas:
+
 - Todo en **minúsculas** y `kebab-case`.
 - Sin tildes ni espacios.
 - Descripción breve pero entendible (máx. ~5 palabras).
@@ -78,17 +102,17 @@ Formato: `<tipo>(<alcance opcional>): <descripción en imperativo>`
 
 Tipos permitidos:
 
-| Tipo       | Cuándo usarlo                                                 |
-|------------|---------------------------------------------------------------|
-| `feat`     | Nueva funcionalidad o caso de prueba                          |
-| `fix`      | Corrección de un defecto                                      |
-| `refactor` | Cambio interno sin alterar comportamiento                     |
-| `test`     | Añadir o ajustar pruebas                                      |
-| `docs`     | Documentación                                                 |
-| `chore`    | Tareas de mantenimiento (deps, configs)                       |
-| `ci`       | Cambios en integración continua                               |
-| `style`    | Formato, sin cambios de lógica                                |
-| `perf`     | Mejora de rendimiento                                         |
+| Tipo       | Cuándo usarlo                             |
+| ---------- | ----------------------------------------- |
+| `feat`     | Nueva funcionalidad o caso de prueba      |
+| `fix`      | Corrección de un defecto                  |
+| `refactor` | Cambio interno sin alterar comportamiento |
+| `test`     | Añadir o ajustar pruebas                  |
+| `docs`     | Documentación                             |
+| `chore`    | Tareas de mantenimiento (deps, configs)   |
+| `ci`       | Cambios en integración continua           |
+| `style`    | Formato, sin cambios de lógica            |
+| `perf`     | Mejora de rendimiento                     |
 
 Ejemplos:
 
@@ -100,6 +124,7 @@ docs(git): documentar el modelo de ramas GitFlow
 ```
 
 Reglas:
+
 - Mensaje en **español**, en **imperativo** ("agregar", no "agregado").
 - Primera línea ≤ 72 caracteres.
 - **No** incluir `Co-Authored-By`.

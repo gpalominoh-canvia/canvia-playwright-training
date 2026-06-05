@@ -33,6 +33,13 @@ Activa la plantilla de commits del repo (una sola vez):
 git config commit.template .gitmessage.txt
 ```
 
+## Verificación automática (pre-commit)
+
+Al ejecutar `npm install` se instala un hook de **pre-commit** (Husky) que, en
+cada commit, formatea y corre ESLint sobre lo modificado (`lint-staged`) y
+valida los tipos (`typecheck`). Si algo falla, el commit se detiene: corrige y
+vuelve a intentar.
+
 ## Pull Requests
 
 - Las `feature/*` y `bugfix/*` apuntan a **`develop`**.

@@ -16,24 +16,25 @@
 
 Todo vive en un solo archivo: [`.github/workflows/e2e.yml`](../../.github/workflows/e2e.yml).
 
-```
-evento (push / PR / manual / cron)
-        │
-        ├─ calidad      → typecheck + lint
-        ├─ playwright   → matriz: nivel-1, nivel-2, nivel-3 (en paralelo)
-        ├─ cucumber     → nivel-4 (BDD)
-        │
-        └─ ci-ok        → requiere que TODOS pasen  (check requerido)
+```mermaid
+flowchart LR
+  E[push / PR / manual / cron] --> C[calidad<br/>typecheck + lint]
+  E --> P1[playwright<br/>nivel-1]
+  E --> P2[playwright<br/>nivel-2]
+  E --> P3[playwright<br/>nivel-3]
+  E --> CU[cucumber<br/>nivel-4]
+  C & P1 & P2 & P3 & CU --> OK{{CI OK}}
+  OK -->|check requerido| M[Merge permitido]
 ```
 
 ### Jobs
 
-| Job          | Qué hace                                                    |
-|--------------|-------------------------------------------------------------|
-| `calidad`    | `npm run typecheck` + `npm run lint`                        |
-| `playwright` | Matriz: corre cada nivel 1–3 como job independiente         |
-| `cucumber`   | Corre el nivel 4 (`npm run test:nivel-4`)                   |
-| `ci-ok`      | Agregador: pasa solo si los anteriores pasaron              |
+| Job          | Qué hace                                            |
+| ------------ | --------------------------------------------------- |
+| `calidad`    | `npm run typecheck` + `npm run lint`                |
+| `playwright` | Matriz: corre cada nivel 1–3 como job independiente |
+| `cucumber`   | Corre el nivel 4 (`npm run test:nivel-4`)           |
+| `ci-ok`      | Agregador: pasa solo si los anteriores pasaron      |
 
 ### Disparadores (triggers)
 
@@ -41,9 +42,9 @@ evento (push / PR / manual / cron)
 on:
   push: { branches: [main, develop] }
   pull_request: { branches: [main, develop] }
-  workflow_dispatch:        # botón "Run workflow" en la UI
+  workflow_dispatch: # botón "Run workflow" en la UI
   schedule:
-    - cron: '0 6 * * 1-5'   # 06:00 UTC, lun-vie (nightly)
+    - cron: '0 6 * * 1-5' # 06:00 UTC, lun-vie (nightly)
 ```
 
 ## Cómo ejecutarlo
@@ -58,7 +59,7 @@ on:
 2. Abre la ejecución → verás los jobs (`calidad`, `playwright (nivel-1-basico)`,
    etc.).
 3. Si algo falla, abre el job para ver el log del step que falló.
-4. Descarga el **reporte** desde la sección *Artifacts* de la ejecución
+4. Descarga el **reporte** desde la sección _Artifacts_ de la ejecución
    (`playwright-report-<nivel>` o `cucumber-report`).
 
 ## Puerta de calidad (branch protection)
@@ -94,7 +95,7 @@ En una rama `feature/<tu-nombre>-nivel5`:
 - Mantén la CI **rápida** (caché, paralelismo, instalar lo mínimo).
 - Sube **siempre** los reportes (`if: always()`).
 - Requiere un **único check agregador** en la protección de ramas.
-- No guardes secretos en el YAML: usa *GitHub Secrets*.
+- No guardes secretos en el YAML: usa _GitHub Secrets_.
 
 ---
 

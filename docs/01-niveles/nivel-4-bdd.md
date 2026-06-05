@@ -36,6 +36,7 @@ cucumber.js                  # configuración de Cucumber
 ## Cómo encajan las piezas
 
 1. **`.feature`** describe el comportamiento en Gherkin:
+
    ```gherkin
    # language: es
    Escenario: Login exitoso con usuario estándar
@@ -45,6 +46,7 @@ cucumber.js                  # configuración de Cucumber
    ```
 
 2. **Step definition** conecta cada línea con código:
+
    ```ts
    When(
      'inicio sesión con usuario {string} y contraseña {string}',
@@ -54,12 +56,22 @@ cucumber.js                  # configuración de Cucumber
      },
    );
    ```
+
    `{string}` captura el texto entre comillas y lo pasa como argumento.
 
 3. **World** (`this`) comparte la `page` entre los steps del mismo escenario.
 
 4. **Hooks** abren el navegador (`BeforeAll`), crean una página nueva por
    escenario (`Before`) y limpian al final (`After` / `AfterAll`).
+
+```mermaid
+flowchart LR
+  F[".feature<br/>(Gherkin)"] -->|cucumber-js empareja| S[Step definition]
+  H[Hooks<br/>Before/After] -->|preparan| W[World: this.page]
+  S -->|usa| W
+  W --> B[(Navegador<br/>Playwright)]
+  S --> AS[Aserción del resultado]
+```
 
 ## Ejecutar
 
