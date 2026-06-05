@@ -1,0 +1,105 @@
+name: E2E
+
+# NIVEL 5 — Pipeline de Integración Continua.
+# Ejecuta calidad de código + las 4 suites de prueba en GitHub Actions.
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+  # Permite ejecutarlo manualmente desde la pestaña "Actions".
+  workflow_dispatch:
+  # Ejecución programada: 06:00 UTC de lunes a viernes.
+  schedule:
+    - cron: '0 6 * * 1-5'
+
+# Cancela ejecuciones anteriores del mismo branch si llega una nueva.
+concurrency:
+  group: e2e-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  calidad:
+    name: Calidad de código
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Chequeo de tipos
+        run: npm run typecheck
+      - name: Lint
+        run: npm run lint
+
+  playwright:
+    name: Playwright
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        nivel: [nivel-1-basico, nivel-2-pom, nivel-3-screenplay, nivel-6-api]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Instalar navegador
+        run: npx playwright install --with-deps chromium
+      - name: Ejecutar suite ${{ matrix.nivel }}
+        run: npx playwright test --project=${{ matrix.nivel }}
+      - name: Publicar reporte
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report-${{ matrix.nivel }}
+          path: playwright-report/
+          retention-days: 7
+
+  cucumber:
+    name: Cucumber BDD
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Instalar navegador
+        run: npx playwright install --with-deps chromium
+      - name: Ejecutar BDD (nivel 4)
+        run: npm run test:nivel-4
+      - name: Publicar reporte
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cucumber-report
+          path: playwright-report/cucumber.html
+          retention-days: 7
+
+  # Job agregador: es el único check requerido por la protección de ramas.
+  # Pasa solo si TODOS los jobs anteriores pasaron.
+  ci-ok:
+    name: CI OK
+    if: always()
+    needs: [calidad, playwright, cucumber]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verificar resultados
+        run: |
+          echo "calidad=${{ needs.calidad.result }}"
+          echo "playwright=${{ needs.playwright.result }}"
+          echo "cucumber=${{ needs.cucumber.result }}"
+          if [ "${{ needs.calidad.result }}" != "success" ] || \
+             [ "${{ needs.playwright.result }}" != "success" ] || \
+             [ "${{ needs.cucumber.result }}" != "success" ]; then
+            echo "::error::Al menos un job falló."
+            exit 1
+          fi
+          echo "Todos los jobs pasaron."

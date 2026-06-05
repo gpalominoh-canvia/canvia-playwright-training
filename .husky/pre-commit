@@ -1,0 +1,3 @@
+# Antes de cada commit: formatear/lint de lo staged + chequeo de tipos.
+npx lint-staged
+npm run typecheck
