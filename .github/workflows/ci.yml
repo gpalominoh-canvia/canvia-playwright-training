@@ -37,7 +37,7 @@ jobs:
 
       - name: Instalar navegadores de Playwright
         if: steps.check.outputs.ready == 'true'
-        run: npx playwright install --with-deps
+        run: npx playwright install --with-deps chromium
 
       - name: Ejecutar pruebas E2E
         if: steps.check.outputs.ready == 'true'
