@@ -20,6 +20,7 @@
    ```
 2. **Configuración:** repaso de `playwright.config.ts` (baseURL, projects).
 3. **Anatomía de un test:**
+
    ```ts
    import { test, expect } from '@playwright/test';
 
@@ -28,6 +29,7 @@
      await expect(page).toHaveTitle('Swag Labs');
    });
    ```
+
 4. **Ejecutar:**
    ```bash
    npm run test:nivel-1
@@ -37,6 +39,8 @@
 📄 Archivo: `tests/nivel-1-basico/01-primer-test.spec.ts`
 
 ### Clase 2 — Localizadores, interacciones y aserciones
+
+> 🔎 Guía dedicada: [cómo obtener y elegir locators](../02-guias/guia-locators.md).
 
 - **Localizadores recomendados:** `getByRole`, `getByLabel`, atributos
   `data-test`. Evitar selectores frágiles basados en estilos.
