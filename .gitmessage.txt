@@ -1,0 +1,13 @@
+# <tipo>(<alcance>): <descripción en imperativo, máx 72 caracteres>
+#
+# Tipos: feat | fix | refactor | test | docs | chore | ci | style | perf
+# Ejemplo: feat(login): agregar page object de la página de login
+#
+# Cuerpo (opcional): explica el QUÉ y el PORQUÉ, no el cómo.
+#
+#
+# Pie (opcional): referencia a issues. Ej: Closes #12
+#
+# Reglas:
+#  - Mensaje en español, en imperativo ("agregar", no "agregado").
+#  - No incluir Co-Authored-By.
