@@ -1,89 +1,155 @@
-# canvia-playwright-training
+<div align="center">
 
-[![E2E](https://github.com/gpalominoh-canvia/canvia-playwright-training/actions/workflows/e2e.yml/badge.svg)](https://github.com/gpalominoh-canvia/canvia-playwright-training/actions/workflows/e2e.yml)
+  <img src="docs/assets/logo-canvia.png" alt="Canvia" width="320" />
 
-Framework base de automatización E2E con **Playwright + TypeScript** y buenas
-prácticas QA para capacitación interna.
+  <h1>Canvia Playwright Training</h1>
 
-## Requisitos
+  <p><strong>Framework de automatización E2E con Playwright + TypeScript</strong><br/>
+  Capacitación interna de QA Automation, organizada en 5 niveles progresivos.</p>
 
-- Node.js 20 o superior
-- npm 10 o superior
+  [![E2E](https://github.com/gpalominoh-canvia/canvia-playwright-training/actions/workflows/e2e.yml/badge.svg)](https://github.com/gpalominoh-canvia/canvia-playwright-training/actions/workflows/e2e.yml)
+  ![Playwright](https://img.shields.io/badge/Playwright-2EAD33?logo=playwright&logoColor=white)
+  ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
+  ![Cucumber](https://img.shields.io/badge/Cucumber-23D96C?logo=cucumber&logoColor=white)
+  ![Node](https://img.shields.io/badge/Node.js-20%2B-339933?logo=node.js&logoColor=white)
 
-## Instalación
+</div>
+
+---
+
+## 📑 Tabla de contenidos
+
+- [Sobre el proyecto](#-sobre-el-proyecto)
+- [Inicio rápido](#-inicio-rápido)
+- [Comandos](#-comandos)
+- [Capacitación por niveles](#-capacitación-por-niveles)
+- [Documentación](#-documentación)
+- [Estructura del proyecto](#-estructura-del-proyecto)
+- [Flujo de trabajo](#-flujo-de-trabajo)
+
+---
+
+## 🎯 Sobre el proyecto
+
+Framework base para aprender automatización de pruebas E2E aplicando un mismo
+caso de estudio (el sitio de práctica **SauceDemo**) con un nivel de
+abstracción creciente: desde tests "planos" hasta BDD y su ejecución en CI.
+
+| | |
+|---|---|
+| **Stack** | Playwright · TypeScript · Cucumber · GitHub Actions |
+| **Patrones** | Page Object Model · Screenplay · BDD |
+| **Currículo** | 5 niveles · 10 clases |
+| **Flujo Git** | GitFlow con ramas protegidas y PRs |
+
+---
+
+## ⚡ Inicio rápido
+
+> Guía detallada desde cero (Node, Git, VS Code y extensiones):
+> **[docs/configuracion-entorno.md](docs/configuracion-entorno.md)**.
 
 ```bash
+# 1. Clonar
+git clone https://github.com/gpalominoh-canvia/canvia-playwright-training.git
+cd canvia-playwright-training
+
+# 2. Instalar dependencias y navegadores
 npm install
 npx playwright install
+
+# 3. Variables de entorno
+cp .env.example .env        # en PowerShell: Copy-Item .env.example .env
+
+# 4. Verificar que todo corre
+npm test
 ```
 
-Copia las variables de entorno y ajústalas si hace falta:
+**Requisitos:** Node.js 20+ y npm 10+.
 
-```bash
-cp .env.example .env
-```
+---
 
-## Ejecución de pruebas
+## 🧰 Comandos
 
-```bash
-npm test              # niveles 1-3 (runner de Playwright)
-npm run test:nivel-1  # Nivel 1 — básico
-npm run test:nivel-2  # Nivel 2 — POM
-npm run test:nivel-3  # Nivel 3 — Screenplay
-npm run test:nivel-4  # Nivel 4 — BDD con Cucumber (runner cucumber-js)
-npm run test:headed   # con navegador visible
-npm run test:ui       # modo UI interactivo
-npm run test:debug    # modo debug
-npm run report        # abre el último reporte HTML
-npm run codegen       # grabador de acciones
-```
+| Comando                | Descripción                                  |
+|------------------------|----------------------------------------------|
+| `npm test`             | Ejecuta niveles 1–3 (runner de Playwright)   |
+| `npm run test:nivel-1` | Nivel 1 — básico                             |
+| `npm run test:nivel-2` | Nivel 2 — POM                                |
+| `npm run test:nivel-3` | Nivel 3 — Screenplay                         |
+| `npm run test:nivel-4` | Nivel 4 — BDD con Cucumber                   |
+| `npm run test:headed`  | Con el navegador visible                     |
+| `npm run test:ui`      | Modo UI interactivo                          |
+| `npm run test:debug`   | Depuración paso a paso                       |
+| `npm run report`       | Abre el último reporte HTML                  |
+| `npm run codegen`      | Grabador de acciones                         |
+| `npm run typecheck`    | Verifica tipos de TypeScript                 |
+| `npm run lint`         | Analiza el código con ESLint                 |
+| `npm run format`       | Formatea el código con Prettier              |
 
-## Calidad de código
+---
 
-```bash
-npm run lint       # ESLint
-npm run format     # Prettier
-npm run typecheck  # chequeo de tipos sin emitir
-```
+## 🎓 Capacitación por niveles
 
-## Capacitación por niveles
+Cada nivel introduce una abstracción mayor sobre el mismo caso de estudio.
 
-El repositorio está organizado en **5 niveles** progresivos (currículo de 10
-clases). Empieza por el sílabus:
+| Nivel | Tema                   | Qué aprendes                                  | Guía |
+|:-----:|------------------------|-----------------------------------------------|------|
+| 1 🟢  | Fundamentos Playwright | Localizadores, acciones y aserciones          | [ver](docs/nivel-1-basico.md) |
+| 2 🟡  | Page Object Model      | Encapsular páginas, fixtures, datos           | [ver](docs/nivel-2-pom.md) |
+| 3 🔵  | Screenplay             | Actores, tasks, questions                     | [ver](docs/nivel-3-screenplay.md) |
+| 4 🟣  | BDD con Cucumber       | Gherkin, steps, World y hooks                 | [ver](docs/nivel-4-bdd.md) |
+| 5 🟠  | Integración Continua   | GitHub Actions: ejecutar todo en la nube      | [ver](docs/nivel-5-ci.md) |
 
-- 📚 [docs/silabus.md](docs/silabus.md) — plan de clases, objetivos y evaluación.
-- 🟢 [Nivel 1 — Básico](docs/nivel-1-basico.md): Playwright puro, sin patrones.
-- 🟡 [Nivel 2 — POM](docs/nivel-2-pom.md): Page Object Model + fixtures.
-- 🔵 [Nivel 3 — Screenplay](docs/nivel-3-screenplay.md): patrón de comportamiento.
-- 🟣 [Nivel 4 — BDD](docs/nivel-4-bdd.md): Cucumber + Gherkin.
-- 🟠 [Nivel 5 — CI](docs/nivel-5-ci.md): GitHub Actions para ejecutar las pruebas.
+👉 Empieza por el **[sílabus completo](docs/silabus.md)** y practica con el
+**[banco de ejercicios](docs/ejercicios.md)**.
 
-Guías de apoyo: [TypeScript](docs/guia-typescript.md) · [BDD](docs/guia-bdd.md) · [CI/CD](docs/guia-ci.md).
+---
 
-## Estructura del proyecto
+## 📚 Documentación
+
+Todo el material vive en **[`docs/`](docs/README.md)**:
+
+- **Inicio:** [Configuración del entorno](docs/configuracion-entorno.md) · [Sílabus](docs/silabus.md) · [Ejercicios](docs/ejercicios.md)
+- **Guías transversales:** [TypeScript](docs/guia-typescript.md) · [BDD](docs/guia-bdd.md) · [CI/CD](docs/guia-ci.md)
+- **Proceso:** [Flujo de trabajo Git](docs/git-workflow.md) · [Contribución](CONTRIBUTING.md)
+
+---
+
+## 🗂️ Estructura del proyecto
 
 ```
 .
-├── tests/
+├── tests/                     # especificaciones de prueba
 │   ├── nivel-1-basico/        # tests planos (sin patrón)
 │   ├── nivel-2-pom/           # tests con Page Object Model
 │   ├── nivel-3-screenplay/    # tests con Screenplay
 │   └── nivel-4-bdd/           # escenarios Gherkin (.feature)
-├── src/
+├── src/                       # código del framework
 │   ├── nivel-2-pom/           # pages, fixtures, data
 │   ├── nivel-3-screenplay/    # framework Screenplay (core, abilities, tasks…)
 │   └── nivel-4-bdd/           # step definitions, World y hooks de Cucumber
-├── docs/                      # sílabus, guías por nivel, BDD, TypeScript, CI, Git
-├── .github/
-│   └── workflows/e2e.yml      # Nivel 5: pipeline de CI (todos los niveles)
-├── playwright.config.ts       # un "project" por nivel (1-3)
+├── docs/                      # documentación (índice en docs/README.md)
+├── .github/workflows/e2e.yml  # Nivel 5: pipeline de CI (todos los niveles)
+├── .vscode/                   # extensiones y ajustes recomendados
+├── playwright.config.ts       # un "project" por nivel (1–3)
 ├── cucumber.js                # configuración de Cucumber (nivel 4)
 └── tsconfig.json
 ```
 
-## Flujo de trabajo Git
+---
 
-Trabajamos con **GitFlow**. Antes de contribuir lee:
+## 🔀 Flujo de trabajo
 
-- [docs/git-workflow.md](docs/git-workflow.md) — modelo de ramas y proceso.
-- [CONTRIBUTING.md](CONTRIBUTING.md) — convenciones de ramas, commits y PRs.
+Trabajamos con **GitFlow**: `main` (estable) y `develop` (integración), ambas
+protegidas; el trabajo entra por ramas `feature/*` y **Pull Requests** que
+deben pasar la CI y una revisión.
+
+- 📖 [Modelo de ramas y proceso](docs/git-workflow.md)
+- ✅ [Convenciones de contribución](CONTRIBUTING.md)
+
+---
+
+<div align="center">
+  <sub>Canvia · <em>nacimos para reinventar</em> · Capacitación interna de QA Automation</sub>
+</div>

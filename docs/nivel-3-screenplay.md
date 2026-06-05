@@ -94,3 +94,7 @@ En una rama `feature/<tu-nombre>-nivel3`:
 | Reutilización    | Media (métodos por página)   | Alta (interactions/tasks atómicas)|
 | Curva de aprendizaje | Baja                     | Media                            |
 | Ideal para       | Proyectos medianos           | Suites grandes y equipos         |
+
+---
+
+<sub>📚 <a href="README.md">Índice de documentación</a> · <a href="../README.md">Inicio del repositorio</a></sub>

@@ -95,3 +95,7 @@ En una rama `feature/<tu-nombre>-nivel5`:
 - Sube **siempre** los reportes (`if: always()`).
 - Requiere un **único check agregador** en la protección de ramas.
 - No guardes secretos en el YAML: usa *GitHub Secrets*.
+
+---
+
+<sub>📚 <a href="README.md">Índice de documentación</a> · <a href="../README.md">Inicio del repositorio</a></sub>

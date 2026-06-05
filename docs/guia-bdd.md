@@ -272,3 +272,7 @@ export default {
 | Hook             | Código de ciclo de vida (Before/After).                     |
 | Tag              | Etiqueta para clasificar/filtrar escenarios.                |
 | Living Documentation | Documentación ejecutable y siempre actualizada.         |
+
+---
+
+<sub>📚 <a href="README.md">Índice de documentación</a> · <a href="../README.md">Inicio del repositorio</a></sub>

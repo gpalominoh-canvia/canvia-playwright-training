@@ -227,3 +227,7 @@ Muestra en el README si la build está pasando:
 | Artifact   | Archivo guardado tras la ejecución.                            |
 | Matrix     | Ejecutar un job con múltiples variantes en paralelo.           |
 | Quality gate | Check que debe pasar para permitir el merge.                 |
+
+---
+
+<sub>📚 <a href="README.md">Índice de documentación</a> · <a href="../README.md">Inicio del repositorio</a></sub>

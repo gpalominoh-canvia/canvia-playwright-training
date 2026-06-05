@@ -27,6 +27,10 @@ Al finalizar, el participante será capaz de:
 - Git instalado y cuenta de GitHub.
 - Node.js 20+ y un editor (VS Code recomendado).
 
+> 🔧 Sigue la [guía de configuración del entorno](configuracion-entorno.md)
+> antes de la Clase 1. La práctica de cada nivel está en el
+> [banco de ejercicios](ejercicios.md).
+
 ## Estructura del repositorio
 
 | Carpeta                       | Nivel | Contenido                                  |
@@ -142,3 +146,7 @@ Al finalizar, el participante será capaz de:
 - Sitio de práctica: https://www.saucedemo.com
 - Documentación oficial: https://playwright.dev
 - Flujo de trabajo Git del curso: [git-workflow.md](git-workflow.md)
+
+---
+
+<sub>📚 <a href="README.md">Índice de documentación</a> · <a href="../README.md">Inicio del repositorio</a></sub>

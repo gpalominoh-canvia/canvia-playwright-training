@@ -288,3 +288,7 @@ Así, `@pom/pages/LoginPage` en vez de `../../../src/nivel-2-pom/pages/LoginPage
 - Documentación oficial: https://www.typescriptlang.org/docs/
 - TypeScript para JS devs: https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html
 - Tipos de Playwright: https://playwright.dev/docs/test-typescript
+
+---
+
+<sub>📚 <a href="README.md">Índice de documentación</a> · <a href="../README.md">Inicio del repositorio</a></sub>

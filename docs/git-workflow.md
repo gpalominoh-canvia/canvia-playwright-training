@@ -173,3 +173,7 @@ git commit -m "fix(rewards): aumentar timeout de la API de canje"
 - ¿Vamos a entregar? → `release/*` desde `develop` hacia `main`.
 - ¿Algo roto en producción/`main`? → `hotfix/*` desde `main`.
 - **Nunca** se commitea directo a `main` ni a `develop`.
+
+---
+
+<sub>📚 <a href="README.md">Índice de documentación</a> · <a href="../README.md">Inicio del repositorio</a></sub>

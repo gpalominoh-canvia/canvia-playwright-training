@@ -84,3 +84,7 @@ En una rama `feature/<tu-nombre>-nivel2`:
 - Un Page Object por página/componente significativo.
 - Métodos que devuelven datos (no aserciones): las aserciones van en el test.
 - Reutilizar `BasePage` para lógica común.
+
+---
+
+<sub>📚 <a href="README.md">Índice de documentación</a> · <a href="../README.md">Inicio del repositorio</a></sub>

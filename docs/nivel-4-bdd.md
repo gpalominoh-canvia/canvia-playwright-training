@@ -92,3 +92,7 @@ En una rama `feature/<tu-nombre>-nivel4`:
 - Gherkin describe **qué**, no **cómo** (sin selectores en los `.feature`).
 - Reutiliza steps; evita escenarios duplicados (usa Scenario Outline).
 - Un escenario = un comportamiento observable de negocio.
+
+---
+
+<sub>📚 <a href="README.md">Índice de documentación</a> · <a href="../README.md">Inicio del repositorio</a></sub>
