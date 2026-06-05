@@ -1,0 +1,13 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "eslint.validate": ["typescript"],
+  "files.eol": "\n",
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "cucumber.features": ["tests/nivel-4-bdd/**/*.feature"],
+  "cucumber.glue": ["src/nivel-4-bdd/**/*.ts"],
+  "cSpell.language": "es,en"
+}

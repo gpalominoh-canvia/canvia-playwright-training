@@ -2,7 +2,7 @@
 
 Gracias por participar en la capacitación **Canvia Playwright Training**.
 Para mantener el repositorio ordenado, sigue estas reglas. El detalle completo
-del modelo de ramas está en [docs/git-workflow.md](docs/git-workflow.md).
+del modelo de ramas está en [docs/03-proceso/git-workflow.md](docs/03-proceso/git-workflow.md).
 
 ## Antes de empezar
 
@@ -32,6 +32,13 @@ Activa la plantilla de commits del repo (una sola vez):
 ```bash
 git config commit.template .gitmessage.txt
 ```
+
+## Verificación automática (pre-commit)
+
+Al ejecutar `npm install` se instala un hook de **pre-commit** (Husky) que, en
+cada commit, formatea y corre ESLint sobre lo modificado (`lint-staged`) y
+valida los tipos (`typecheck`). Si algo falla, el commit se detiene: corrige y
+vuelve a intentar.
 
 ## Pull Requests
 

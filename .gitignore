@@ -154,4 +154,8 @@ blob-report/
 CLAUDE.md
 .cursor/
 .idea/
-.vscode/
+
+# VS Code: ignorar config personal pero compartir recomendaciones del equipo
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
