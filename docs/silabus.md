@@ -1,9 +1,13 @@
 # Sílabus — Capacitación Playwright QA Automation
 
-Programa de **6 sesiones** organizado en **3 niveles** (2 sesiones por nivel).
+Programa de **8 sesiones** organizado en **4 niveles** (2 sesiones por nivel).
 Cada nivel introduce un nivel de abstracción mayor sobre el mismo caso de
 estudio (sitio de práctica **SauceDemo**), para que se vea la evolución de un
-test "plano" hasta un patrón de comportamiento (Screenplay).
+test "plano" hasta BDD con Cucumber.
+
+> 📘 Material transversal de apoyo: [guia-typescript.md](guia-typescript.md)
+> (conceptos de TypeScript usados en todos los niveles) y
+> [guia-bdd.md](guia-bdd.md) (teoría de BDD para el Nivel 4).
 
 ## Objetivos generales
 
@@ -12,6 +16,7 @@ Al finalizar, el participante será capaz de:
 - Escribir y depurar pruebas E2E con Playwright + TypeScript.
 - Aplicar el patrón **Page Object Model (POM)**.
 - Aplicar el patrón **Screenplay**.
+- Implementar **BDD con Cucumber** (Gherkin + step definitions).
 - Trabajar con un flujo profesional de **GitFlow** (ramas, PRs, CI).
 
 ## Requisitos previos
@@ -27,8 +32,10 @@ Al finalizar, el participante será capaz de:
 | `tests/nivel-1-basico/`       | 1     | Tests planos (sin patrón)                  |
 | `tests/nivel-2-pom/`          | 2     | Tests con Page Object Model                |
 | `tests/nivel-3-screenplay/`   | 3     | Tests con Screenplay                       |
+| `tests/nivel-4-bdd/`          | 4     | Escenarios Gherkin (`.feature`)            |
 | `src/nivel-2-pom/`            | 2     | Page Objects, fixtures, data               |
 | `src/nivel-3-screenplay/`     | 3     | Framework Screenplay propio                |
+| `src/nivel-4-bdd/`            | 4     | Step definitions, World y hooks de Cucumber|
 | `docs/`                       | —     | Sílabus, guías por nivel y flujo Git       |
 
 ---
@@ -79,6 +86,21 @@ Al finalizar, el participante será capaz de:
 - Escribir Tasks y Questions nuevas. Componer comportamiento legible.
 - Comparación POM vs Screenplay: cuándo usar cada uno.
 - Práctica: `tests/nivel-3-screenplay/login.spec.ts` + ejercicio guiado.
+
+### Nivel 4 — BDD con Cucumber
+
+> Guías: [nivel-4-bdd.md](nivel-4-bdd.md) y teoría en [guia-bdd.md](guia-bdd.md)
+
+**Clase 7 — Fundamentos de BDD y Gherkin**
+- Qué es BDD, los "Tres Amigos" y la documentación viva.
+- Gherkin: Característica, Escenario, Dado/Cuando/Entonces, Antecedentes.
+- Escribir escenarios declarativos y parametrizados (Scenario Outline).
+
+**Clase 8 — Cucumber + Playwright**
+- Step definitions, Cucumber Expressions (`{string}`, `{int}`).
+- World (estado compartido) y hooks (ciclo de vida del navegador).
+- Etiquetas (tags) y ejecución selectiva. Reportes.
+- Práctica: `tests/nivel-4-bdd/login.feature` + ejercicio guiado.
 
 ---
 
