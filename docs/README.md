@@ -22,6 +22,7 @@
 | 3 🔵  | Screenplay             | [nivel-3-screenplay.md](01-niveles/nivel-3-screenplay.md) |
 | 4 🟣  | BDD con Cucumber       | [nivel-4-bdd.md](01-niveles/nivel-4-bdd.md)               |
 | 5 🟠  | Integración Continua   | [nivel-5-ci.md](01-niveles/nivel-5-ci.md)                 |
+| 6 🔴  | Pruebas de API         | [nivel-6-api.md](01-niveles/nivel-6-api.md)               |
 
 ## 🧠 Guías transversales
 
@@ -30,6 +31,7 @@
 | [TypeScript](02-guias/guia-typescript.md)             | Conceptos de TS usados en el framework      |
 | [BDD](02-guias/guia-bdd.md)                           | Teoría completa de BDD (Nivel 4)            |
 | [CI/CD](02-guias/guia-ci.md)                          | Teoría de Integración Continua (Nivel 5)    |
+| [API testing](02-guias/guia-api-testing.md)           | Teoría de pruebas de API (Nivel 6)          |
 | [Buenas prácticas](02-guias/guia-buenas-practicas.md) | Reglas para tests estables y mantenibles    |
 | [Depuración](02-guias/guia-depuracion.md)             | Cómo investigar y resolver tests que fallan |
 

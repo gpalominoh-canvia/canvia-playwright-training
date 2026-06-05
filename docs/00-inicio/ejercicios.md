@@ -124,13 +124,27 @@ En la revisión conjunta veremos sobre tu PR:
 
 ---
 
+## 🔴 Nivel 6 — Pruebas de API
+
+> Carpeta de trabajo: `src/nivel-6-api/` y `tests/nivel-6-api/`
+
+1. **PUT /posts/1:** agrega una prueba que valide la actualización y un método
+   `update` en `PostsApi`.
+2. **Nuevo recurso:** crea un cliente `UsersApi` y valida el contrato de
+   `GET /users/1`.
+3. **Casos de error:** valida que `GET /posts/9999` responde `404`.
+4. **Contrato:** verifica los campos y tipos de la respuesta de `GET /posts`.
+5. **(Reto)** Combina API + UI: prepara datos por API y verifícalos en pantalla.
+
+---
+
 ## Criterios de evaluación (recordatorio)
 
-| Criterio                                    | Peso |
-|---------------------------------------------|------|
-| Ejercicios entregados por PR (uno por nivel)| 60%  |
-| Aplicación correcta del patrón del nivel    | 25%  |
-| Buenas prácticas Git (ramas, commits, CI)   | 15%  |
+| Criterio                                     | Peso |
+| -------------------------------------------- | ---- |
+| Ejercicios entregados por PR (uno por nivel) | 60%  |
+| Aplicación correcta del patrón del nivel     | 25%  |
+| Buenas prácticas Git (ramas, commits, CI)    | 15%  |
 
 ---
 

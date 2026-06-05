@@ -1,14 +1,15 @@
 ﻿# Sílabus — Capacitación Playwright QA Automation
 
-Programa de **10 sesiones** organizado en **5 niveles** (2 sesiones por nivel).
+Programa de **12 sesiones** organizado en **6 niveles** (2 sesiones por nivel).
 Cada nivel introduce un nivel de abstracción mayor sobre el mismo caso de
 estudio (sitio de práctica **SauceDemo**), para que se vea la evolución de un
-test "plano" hasta BDD con Cucumber y su ejecución en CI.
+test "plano" hasta BDD, CI y pruebas de API.
 
 > 📘 Material transversal de apoyo: [guia-typescript.md](../02-guias/guia-typescript.md)
 > (conceptos de TypeScript usados en todos los niveles),
-> [guia-bdd.md](../02-guias/guia-bdd.md) (teoría de BDD para el Nivel 4) y
-> [guia-ci.md](../02-guias/guia-ci.md) (teoría de CI/CD para el Nivel 5).
+> [guia-bdd.md](../02-guias/guia-bdd.md) (teoría de BDD para el Nivel 4),
+> [guia-ci.md](../02-guias/guia-ci.md) (teoría de CI/CD para el Nivel 5) y
+> [guia-api-testing.md](../02-guias/guia-api-testing.md) (teoría de API para el Nivel 6).
 
 ## Objetivos generales
 
@@ -19,6 +20,7 @@ Al finalizar, el participante será capaz de:
 - Aplicar el patrón **Screenplay**.
 - Implementar **BDD con Cucumber** (Gherkin + step definitions).
 - Ejecutar las pruebas en **CI con GitHub Actions**.
+- Escribir **pruebas de API** con el cliente `request` de Playwright.
 - Trabajar con un flujo profesional de **GitFlow** (ramas, PRs, CI).
 
 ## Requisitos previos
@@ -33,17 +35,19 @@ Al finalizar, el participante será capaz de:
 
 ## Estructura del repositorio
 
-| Carpeta                       | Nivel | Contenido                                  |
-|-------------------------------|-------|--------------------------------------------|
-| `tests/nivel-1-basico/`       | 1     | Tests planos (sin patrón)                  |
-| `tests/nivel-2-pom/`          | 2     | Tests con Page Object Model                |
-| `tests/nivel-3-screenplay/`   | 3     | Tests con Screenplay                       |
-| `tests/nivel-4-bdd/`          | 4     | Escenarios Gherkin (`.feature`)            |
-| `src/nivel-2-pom/`            | 2     | Page Objects, fixtures, data               |
-| `src/nivel-3-screenplay/`     | 3     | Framework Screenplay propio                |
-| `src/nivel-4-bdd/`            | 4     | Step definitions, World y hooks de Cucumber|
-| `.github/workflows/e2e.yml`   | 5     | Pipeline de CI que ejecuta todos los niveles|
-| `docs/`                       | —     | Sílabus, guías por nivel y flujo Git       |
+| Carpeta                     | Nivel | Contenido                                    |
+| --------------------------- | ----- | -------------------------------------------- |
+| `tests/nivel-1-basico/`     | 1     | Tests planos (sin patrón)                    |
+| `tests/nivel-2-pom/`        | 2     | Tests con Page Object Model                  |
+| `tests/nivel-3-screenplay/` | 3     | Tests con Screenplay                         |
+| `tests/nivel-4-bdd/`        | 4     | Escenarios Gherkin (`.feature`)              |
+| `src/nivel-2-pom/`          | 2     | Page Objects, fixtures, data                 |
+| `src/nivel-3-screenplay/`   | 3     | Framework Screenplay propio                  |
+| `src/nivel-4-bdd/`          | 4     | Step definitions, World y hooks de Cucumber  |
+| `.github/workflows/e2e.yml` | 5     | Pipeline de CI que ejecuta todos los niveles |
+| `tests/nivel-6-api/`        | 6     | Pruebas de API                               |
+| `src/nivel-6-api/`          | 6     | API client y fixture                         |
+| `docs/`                     | —     | Sílabus, guías por nivel y flujo Git         |
 
 ---
 
@@ -54,12 +58,14 @@ Al finalizar, el participante será capaz de:
 > Guía detallada: [nivel-1-basico.md](../01-niveles/nivel-1-basico.md)
 
 **Clase 1 — Primer test y herramientas**
+
 - Qué es Playwright y por qué. Instalación y `playwright.config.ts`.
 - Anatomía de un test: `test`, `expect`, `async/await`.
 - Navegación, primer `expect`. Ejecutar y leer el reporte HTML.
 - Práctica: `tests/nivel-1-basico/01-primer-test.spec.ts`.
 
 **Clase 2 — Localizadores, interacciones y aserciones**
+
 - Tipos de localizadores y buenas prácticas (`data-test`, roles).
 - Acciones: `fill`, `click`, `check`, etc. Aserciones web-first.
 - Hooks (`beforeEach`), `describe`, y depuración (`--debug`, `--ui`, codegen).
@@ -70,11 +76,13 @@ Al finalizar, el participante será capaz de:
 > Guía detallada: [nivel-2-pom.md](../01-niveles/nivel-2-pom.md)
 
 **Clase 3 — Introducción al POM**
+
 - Problema de los tests planos: duplicación y fragilidad.
 - Page Objects: encapsular selectores y acciones. `BasePage`.
 - Refactor del login del Nivel 1 a `LoginPage` / `InventoryPage`.
 
 **Clase 4 — Fixtures, datos y escalabilidad**
+
 - Fixtures personalizados para inyectar Page Objects.
 - Externalizar datos de prueba (`src/nivel-2-pom/data`) y `.env`.
 - Buenas prácticas de organización y reutilización.
@@ -85,11 +93,13 @@ Al finalizar, el participante será capaz de:
 > Guía detallada: [nivel-3-screenplay.md](../01-niveles/nivel-3-screenplay.md)
 
 **Clase 5 — Conceptos de Screenplay**
+
 - Limitaciones del POM al crecer. Principio SOLID detrás de Screenplay.
 - Actores, Habilidades (Abilities), Tareas (Tasks), Interacciones, Preguntas.
 - Recorrido del framework propio en `src/nivel-3-screenplay/`.
 
 **Clase 6 — Construir con Screenplay**
+
 - Escribir Tasks y Questions nuevas. Componer comportamiento legible.
 - Comparación POM vs Screenplay: cuándo usar cada uno.
 - Práctica: `tests/nivel-3-screenplay/login.spec.ts` + ejercicio guiado.
@@ -99,11 +109,13 @@ Al finalizar, el participante será capaz de:
 > Guías: [nivel-4-bdd.md](../01-niveles/nivel-4-bdd.md) y teoría en [guia-bdd.md](../02-guias/guia-bdd.md)
 
 **Clase 7 — Fundamentos de BDD y Gherkin**
+
 - Qué es BDD, los "Tres Amigos" y la documentación viva.
 - Gherkin: Característica, Escenario, Dado/Cuando/Entonces, Antecedentes.
 - Escribir escenarios declarativos y parametrizados (Scenario Outline).
 
 **Clase 8 — Cucumber + Playwright**
+
 - Step definitions, Cucumber Expressions (`{string}`, `{int}`).
 - World (estado compartido) y hooks (ciclo de vida del navegador).
 - Etiquetas (tags) y ejecución selectiva. Reportes.
@@ -114,15 +126,33 @@ Al finalizar, el participante será capaz de:
 > Guías: [nivel-5-ci.md](../01-niveles/nivel-5-ci.md) y teoría en [guia-ci.md](../02-guias/guia-ci.md)
 
 **Clase 9 — Fundamentos de CI/CD y GitHub Actions**
+
 - Qué es CI/CD y por qué importa en QA. Anatomía de un workflow.
 - Eventos (push, PR, manual, cron), jobs, steps, actions y runners.
 - Leer y ejecutar un workflow desde la pestaña Actions.
 
 **Clase 10 — El pipeline del proyecto**
+
 - Matrices (un job por nivel), `needs` y job agregador.
 - Artefactos y reportes (`if: always()`), caché y `npm ci`, `concurrency`.
 - CI como puerta de calidad (branch protection) y badge de estado.
 - Práctica: `.github/workflows/e2e.yml` + ejercicio guiado.
+
+### Nivel 6 — Pruebas de API
+
+> Guías: [nivel-6-api.md](../01-niveles/nivel-6-api.md) y teoría en [guia-api-testing.md](../02-guias/guia-api-testing.md)
+
+**Clase 11 — Fundamentos de testing de API**
+
+- Pirámide de pruebas; cuándo API vs UI. HTTP: métodos, estados, cuerpo.
+- El cliente `request` de Playwright (GET/POST/PUT/DELETE).
+- Validar estado, cuerpo y contrato de la respuesta.
+
+**Clase 12 — Organización y casos reales**
+
+- API client (POM para APIs) y fixtures. Autenticación con tokens (Secrets).
+- Pruebas de error (400/401/404) y combinación API + UI.
+- Práctica: `tests/nivel-6-api/posts.spec.ts` + ejercicio guiado.
 
 ---
 
@@ -135,11 +165,11 @@ Al finalizar, el participante será capaz de:
 
 ## Evaluación
 
-| Criterio                                   | Peso |
-|--------------------------------------------|------|
-| Ejercicios entregados por PR (uno por nivel)| 60%  |
-| Aplicación correcta del patrón del nivel    | 25%  |
-| Buenas prácticas Git (ramas, commits, CI)   | 15%  |
+| Criterio                                     | Peso |
+| -------------------------------------------- | ---- |
+| Ejercicios entregados por PR (uno por nivel) | 60%  |
+| Aplicación correcta del patrón del nivel     | 25%  |
+| Buenas prácticas Git (ramas, commits, CI)    | 15%  |
 
 ## Recursos
 

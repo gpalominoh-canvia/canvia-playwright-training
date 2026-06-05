@@ -56,5 +56,12 @@ export default defineConfig({
       testDir: './tests/nivel-3-screenplay',
       use: { ...devices['Desktop Chrome'] },
     },
+    {
+      // Pruebas de API: no usan navegador, solo el fixture `request`.
+      // Tienen su propia baseURL (API pública de práctica).
+      name: 'nivel-6-api',
+      testDir: './tests/nivel-6-api',
+      use: { baseURL: process.env.API_BASE_URL ?? 'https://jsonplaceholder.typicode.com' },
+    },
   ],
 });

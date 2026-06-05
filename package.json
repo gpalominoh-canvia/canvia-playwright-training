@@ -13,6 +13,7 @@
     "test:nivel-2": "playwright test --project=nivel-2-pom",
     "test:nivel-3": "playwright test --project=nivel-3-screenplay",
     "test:nivel-4": "cross-env NODE_OPTIONS=--import=tsx cucumber-js",
+    "test:nivel-6": "playwright test --project=nivel-6-api",
     "report": "playwright show-report",
     "codegen": "playwright codegen",
     "lint": "eslint . --ext .ts",

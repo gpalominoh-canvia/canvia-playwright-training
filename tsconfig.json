@@ -15,7 +15,8 @@
     "baseUrl": ".",
     "paths": {
       "@pom/*": ["src/nivel-2-pom/*"],
-      "@screenplay/*": ["src/nivel-3-screenplay/*"]
+      "@screenplay/*": ["src/nivel-3-screenplay/*"],
+      "@api/*": ["src/nivel-6-api/*"]
     }
   },
   "include": ["src", "tests", "playwright.config.ts"]

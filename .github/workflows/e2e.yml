@@ -41,7 +41,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        nivel: [nivel-1-basico, nivel-2-pom, nivel-3-screenplay]
+        nivel: [nivel-1-basico, nivel-2-pom, nivel-3-screenplay, nivel-6-api]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4

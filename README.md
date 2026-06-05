@@ -5,7 +5,7 @@
   <h1>Canvia Playwright Training</h1>
 
   <p><strong>Framework de automatización E2E con Playwright + TypeScript</strong><br/>
-  Capacitación interna de QA Automation, organizada en 5 niveles progresivos.</p>
+  Capacitación interna de QA Automation, organizada en 6 niveles progresivos.</p>
 
 [![E2E](https://github.com/gpalominoh-canvia/canvia-playwright-training/actions/workflows/e2e.yml/badge.svg)](https://github.com/gpalominoh-canvia/canvia-playwright-training/actions/workflows/e2e.yml)
 ![Playwright](https://img.shields.io/badge/Playwright-2EAD33?logo=playwright&logoColor=white)
@@ -33,13 +33,13 @@
 
 Framework base para aprender automatización de pruebas E2E aplicando un mismo
 caso de estudio (el sitio de práctica **SauceDemo**) con un nivel de
-abstracción creciente: desde tests "planos" hasta BDD y su ejecución en CI.
+abstracción creciente: desde tests "planos" hasta BDD, CI y pruebas de API.
 
 |               |                                                     |
 | ------------- | --------------------------------------------------- |
 | **Stack**     | Playwright · TypeScript · Cucumber · GitHub Actions |
-| **Patrones**  | Page Object Model · Screenplay · BDD                |
-| **Currículo** | 5 niveles · 10 clases                               |
+| **Patrones**  | Page Object Model · Screenplay · BDD · API testing  |
+| **Currículo** | 6 niveles · 12 clases                               |
 | **Flujo Git** | GitFlow con ramas protegidas y PRs                  |
 
 ---
@@ -71,21 +71,22 @@ npm test
 
 ## 🧰 Comandos
 
-| Comando                | Descripción                                |
-| ---------------------- | ------------------------------------------ |
-| `npm test`             | Ejecuta niveles 1–3 (runner de Playwright) |
-| `npm run test:nivel-1` | Nivel 1 — básico                           |
-| `npm run test:nivel-2` | Nivel 2 — POM                              |
-| `npm run test:nivel-3` | Nivel 3 — Screenplay                       |
-| `npm run test:nivel-4` | Nivel 4 — BDD con Cucumber                 |
-| `npm run test:headed`  | Con el navegador visible                   |
-| `npm run test:ui`      | Modo UI interactivo                        |
-| `npm run test:debug`   | Depuración paso a paso                     |
-| `npm run report`       | Abre el último reporte HTML                |
-| `npm run codegen`      | Grabador de acciones                       |
-| `npm run typecheck`    | Verifica tipos de TypeScript               |
-| `npm run lint`         | Analiza el código con ESLint               |
-| `npm run format`       | Formatea el código con Prettier            |
+| Comando                | Descripción                          |
+| ---------------------- | ------------------------------------ |
+| `npm test`             | Ejecuta niveles Playwright (1–3 y 6) |
+| `npm run test:nivel-1` | Nivel 1 — básico                     |
+| `npm run test:nivel-2` | Nivel 2 — POM                        |
+| `npm run test:nivel-3` | Nivel 3 — Screenplay                 |
+| `npm run test:nivel-4` | Nivel 4 — BDD con Cucumber           |
+| `npm run test:nivel-6` | Nivel 6 — pruebas de API             |
+| `npm run test:headed`  | Con el navegador visible             |
+| `npm run test:ui`      | Modo UI interactivo                  |
+| `npm run test:debug`   | Depuración paso a paso               |
+| `npm run report`       | Abre el último reporte HTML          |
+| `npm run codegen`      | Grabador de acciones                 |
+| `npm run typecheck`    | Verifica tipos de TypeScript         |
+| `npm run lint`         | Analiza el código con ESLint         |
+| `npm run format`       | Formatea el código con Prettier      |
 
 ---
 
@@ -100,6 +101,7 @@ Cada nivel introduce una abstracción mayor sobre el mismo caso de estudio.
 | 3 🔵  | Screenplay             | Actores, tasks, questions                | [ver](docs/01-niveles/nivel-3-screenplay.md) |
 | 4 🟣  | BDD con Cucumber       | Gherkin, steps, World y hooks            | [ver](docs/01-niveles/nivel-4-bdd.md)        |
 | 5 🟠  | Integración Continua   | GitHub Actions: ejecutar todo en la nube | [ver](docs/01-niveles/nivel-5-ci.md)         |
+| 6 🔴  | Pruebas de API         | `request` HTTP, API client, contratos    | [ver](docs/01-niveles/nivel-6-api.md)        |
 
 👉 Empieza por el **[sílabus completo](docs/00-inicio/silabus.md)** y practica con el
 **[banco de ejercicios](docs/00-inicio/ejercicios.md)**.
@@ -111,7 +113,7 @@ Cada nivel introduce una abstracción mayor sobre el mismo caso de estudio.
 Todo el material vive en **[`docs/`](docs/README.md)**:
 
 - **Inicio:** [Configuración del entorno](docs/00-inicio/configuracion-entorno.md) · [Sílabus](docs/00-inicio/silabus.md) · [Ejercicios](docs/00-inicio/ejercicios.md)
-- **Guías transversales:** [TypeScript](docs/02-guias/guia-typescript.md) · [BDD](docs/02-guias/guia-bdd.md) · [CI/CD](docs/02-guias/guia-ci.md) · [Buenas prácticas](docs/02-guias/guia-buenas-practicas.md) · [Depuración](docs/02-guias/guia-depuracion.md)
+- **Guías transversales:** [TypeScript](docs/02-guias/guia-typescript.md) · [BDD](docs/02-guias/guia-bdd.md) · [CI/CD](docs/02-guias/guia-ci.md) · [API testing](docs/02-guias/guia-api-testing.md) · [Buenas prácticas](docs/02-guias/guia-buenas-practicas.md) · [Depuración](docs/02-guias/guia-depuracion.md)
 - **Proceso:** [Flujo de trabajo Git](docs/03-proceso/git-workflow.md) · [Contribución](CONTRIBUTING.md)
 
 ---
@@ -124,15 +126,17 @@ Todo el material vive en **[`docs/`](docs/README.md)**:
 │   ├── nivel-1-basico/        # tests planos (sin patrón)
 │   ├── nivel-2-pom/           # tests con Page Object Model
 │   ├── nivel-3-screenplay/    # tests con Screenplay
-│   └── nivel-4-bdd/           # escenarios Gherkin (.feature)
+│   ├── nivel-4-bdd/           # escenarios Gherkin (.feature)
+│   └── nivel-6-api/           # pruebas de API
 ├── src/                       # código del framework
 │   ├── nivel-2-pom/           # pages, fixtures, data
 │   ├── nivel-3-screenplay/    # framework Screenplay (core, abilities, tasks…)
-│   └── nivel-4-bdd/           # step definitions, World y hooks de Cucumber
+│   ├── nivel-4-bdd/           # step definitions, World y hooks de Cucumber
+│   └── nivel-6-api/           # API client y fixture
 ├── docs/                      # documentación (índice en docs/README.md)
 ├── .github/workflows/e2e.yml  # Nivel 5: pipeline de CI (todos los niveles)
 ├── .vscode/                   # extensiones y ajustes recomendados
-├── playwright.config.ts       # un "project" por nivel (1–3)
+├── playwright.config.ts       # un "project" por nivel (1–3 y 6)
 ├── cucumber.js                # configuración de Cucumber (nivel 4)
 └── tsconfig.json
 ```
