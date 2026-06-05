@@ -1,4 +1,4 @@
-# Configuración del entorno (paso a paso)
+﻿# Configuración del entorno (paso a paso)
 
 Guía para dejar tu máquina lista **desde cero**. Síguela en orden antes de la
 Clase 1. Si algo falla, anótalo y lo revisamos en clase.
@@ -86,7 +86,7 @@ gh auth login
 
 1. Descarga desde https://code.visualstudio.com e instala.
 2. Al abrir el proyecto, VS Code te ofrecerá instalar las **extensiones
-   recomendadas** (definidas en [`.vscode/extensions.json`](../.vscode/extensions.json)).
+   recomendadas** (definidas en [`.vscode/extensions.json`](../../.vscode/extensions.json)).
    Acéptalas.
 
 ### Extensiones recomendadas
@@ -100,7 +100,7 @@ gh auth login
 | **GitLens**                       | Ver historial y autoría en el editor      |
 | **Code Spell Checker (+ Español)**| Detectar errores ortográficos             |
 
-> El proyecto ya trae [`.vscode/settings.json`](../.vscode/settings.json) con
+> El proyecto ya trae [`.vscode/settings.json`](../../.vscode/settings.json) con
 > formato al guardar, fin de línea LF y la conexión de Cucumber con los steps.
 
 ---
@@ -187,4 +187,4 @@ Si ves las pruebas en verde, ¡estás listo! 🎉
 
 ---
 
-<sub>📚 <a href="README.md">Índice de documentación</a> · <a href="../README.md">Inicio del repositorio</a></sub>
+<sub>📚 <a href="../README.md">Índice de documentación</a> · <a href="../../README.md">Inicio del repositorio</a></sub>

@@ -1,4 +1,4 @@
-# Guía de TypeScript para QA Automation
+﻿# Guía de TypeScript para QA Automation
 
 Guía de los conceptos de TypeScript que aparecen en este framework. El objetivo
 no es ser exhaustiva, sino que entiendas **el código que vas a leer y escribir**
@@ -70,7 +70,7 @@ async function getTitulo(): Promise<string> {
 ```
 
 📍 En el repo: `BasePage.getTitle(): Promise<string>`
-([src/nivel-2-pom/pages/BasePage.ts](../src/nivel-2-pom/pages/BasePage.ts)).
+([src/nivel-2-pom/pages/BasePage.ts](../../src/nivel-2-pom/pages/BasePage.ts)).
 
 ---
 
@@ -110,7 +110,7 @@ type Resultado = 'ok' | 'error'; // unión de literales
 
 📍 En el repo: `Performable` y `Question<T>` son interfaces que definen el
 contrato del patrón Screenplay
-([src/nivel-3-screenplay/core/](../src/nivel-3-screenplay/core/)).
+([src/nivel-3-screenplay/core/](../../src/nivel-3-screenplay/core/)).
 
 ```ts
 export interface Performable {
@@ -291,4 +291,4 @@ Así, `@pom/pages/LoginPage` en vez de `../../../src/nivel-2-pom/pages/LoginPage
 
 ---
 
-<sub>📚 <a href="README.md">Índice de documentación</a> · <a href="../README.md">Inicio del repositorio</a></sub>
+<sub>📚 <a href="../README.md">Índice de documentación</a> · <a href="../../README.md">Inicio del repositorio</a></sub>

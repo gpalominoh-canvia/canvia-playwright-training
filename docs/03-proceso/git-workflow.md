@@ -1,4 +1,4 @@
-# Flujo de trabajo Git — GitFlow (Canvia Playwright Training)
+﻿# Flujo de trabajo Git — GitFlow (Canvia Playwright Training)
 
 Esta guía define el modelo de ramas, nombres y proceso de integración que
 usaremos durante toda la capacitación. El objetivo es que cada participante
@@ -176,4 +176,4 @@ git commit -m "fix(rewards): aumentar timeout de la API de canje"
 
 ---
 
-<sub>📚 <a href="README.md">Índice de documentación</a> · <a href="../README.md">Inicio del repositorio</a></sub>
+<sub>📚 <a href="../README.md">Índice de documentación</a> · <a href="../../README.md">Inicio del repositorio</a></sub>

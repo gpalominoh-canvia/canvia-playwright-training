@@ -1,4 +1,4 @@
-# Nivel 1 — Fundamentos de Playwright
+﻿# Nivel 1 — Fundamentos de Playwright
 
 > Tests "planos": sin patrones, foco 100% en aprender las APIs de Playwright.
 
@@ -61,7 +61,7 @@ En una rama `feature/<tu-nombre>-nivel1`:
    del menú (hamburguesa) está visible.
 2. Agrega un test que valide el mensaje de error del **usuario bloqueado**
    (`locked_out_user`).
-3. Abre un PR a `develop` siguiendo [git-workflow.md](git-workflow.md).
+3. Abre un PR a `develop` siguiendo [git-workflow.md](../03-proceso/git-workflow.md).
 
 ## Errores comunes
 
@@ -71,4 +71,4 @@ En una rama `feature/<tu-nombre>-nivel1`:
 
 ---
 
-<sub>📚 <a href="README.md">Índice de documentación</a> · <a href="../README.md">Inicio del repositorio</a></sub>
+<sub>📚 <a href="../README.md">Índice de documentación</a> · <a href="../../README.md">Inicio del repositorio</a></sub>

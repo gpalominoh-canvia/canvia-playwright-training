@@ -2,7 +2,7 @@
 
 Gracias por participar en la capacitación **Canvia Playwright Training**.
 Para mantener el repositorio ordenado, sigue estas reglas. El detalle completo
-del modelo de ramas está en [docs/git-workflow.md](docs/git-workflow.md).
+del modelo de ramas está en [docs/03-proceso/git-workflow.md](docs/03-proceso/git-workflow.md).
 
 ## Antes de empezar
 

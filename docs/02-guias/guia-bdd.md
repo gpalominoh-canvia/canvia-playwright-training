@@ -1,7 +1,7 @@
-# Guía completa de BDD (Behavior-Driven Development)
+﻿# Guía completa de BDD (Behavior-Driven Development)
 
 Guía conceptual del desarrollo guiado por comportamiento, base teórica del
-[Nivel 4](nivel-4-bdd.md).
+[Nivel 4](../01-niveles/nivel-4-bdd.md).
 
 ---
 
@@ -245,7 +245,7 @@ export default {
 3. Ejecutar: Cucumber marca los pasos como *undefined* y sugiere los snippets.
 4. **Implementar los step definitions**.
 5. Refactorizar y reutilizar pasos.
-6. Entregar vía PR siguiendo [git-workflow.md](git-workflow.md).
+6. Entregar vía PR siguiendo [git-workflow.md](../03-proceso/git-workflow.md).
 
 ---
 
@@ -275,4 +275,4 @@ export default {
 
 ---
 
-<sub>📚 <a href="README.md">Índice de documentación</a> · <a href="../README.md">Inicio del repositorio</a></sub>
+<sub>📚 <a href="../README.md">Índice de documentación</a> · <a href="../../README.md">Inicio del repositorio</a></sub>

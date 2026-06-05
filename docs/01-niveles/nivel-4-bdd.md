@@ -1,9 +1,9 @@
-# Nivel 4 — BDD con Cucumber
+﻿# Nivel 4 — BDD con Cucumber
 
 > Escribir las pruebas como **especificaciones de comportamiento** en lenguaje
 > natural (Gherkin), entendibles por todo el equipo, y conectarlas a Playwright.
 
-📖 Antes de este nivel, lee la guía conceptual: [guia-bdd.md](guia-bdd.md).
+📖 Antes de este nivel, lee la guía conceptual: [guia-bdd.md](../02-guias/guia-bdd.md).
 
 ## Objetivos
 
@@ -95,4 +95,4 @@ En una rama `feature/<tu-nombre>-nivel4`:
 
 ---
 
-<sub>📚 <a href="README.md">Índice de documentación</a> · <a href="../README.md">Inicio del repositorio</a></sub>
+<sub>📚 <a href="../README.md">Índice de documentación</a> · <a href="../../README.md">Inicio del repositorio</a></sub>

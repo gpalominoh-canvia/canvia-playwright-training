@@ -1,4 +1,4 @@
-# Nivel 3 — Patrón Screenplay
+﻿# Nivel 3 — Patrón Screenplay
 
 > Modelar las pruebas como el **comportamiento de un actor**: legibles como
 > una narración del usuario y altamente componibles.
@@ -97,4 +97,4 @@ En una rama `feature/<tu-nombre>-nivel3`:
 
 ---
 
-<sub>📚 <a href="README.md">Índice de documentación</a> · <a href="../README.md">Inicio del repositorio</a></sub>
+<sub>📚 <a href="../README.md">Índice de documentación</a> · <a href="../../README.md">Inicio del repositorio</a></sub>

@@ -47,7 +47,7 @@ abstracción creciente: desde tests "planos" hasta BDD y su ejecución en CI.
 ## ⚡ Inicio rápido
 
 > Guía detallada desde cero (Node, Git, VS Code y extensiones):
-> **[docs/configuracion-entorno.md](docs/configuracion-entorno.md)**.
+> **[docs/00-inicio/configuracion-entorno.md](docs/00-inicio/configuracion-entorno.md)**.
 
 ```bash
 # 1. Clonar
@@ -95,14 +95,14 @@ Cada nivel introduce una abstracción mayor sobre el mismo caso de estudio.
 
 | Nivel | Tema                   | Qué aprendes                                  | Guía |
 |:-----:|------------------------|-----------------------------------------------|------|
-| 1 🟢  | Fundamentos Playwright | Localizadores, acciones y aserciones          | [ver](docs/nivel-1-basico.md) |
-| 2 🟡  | Page Object Model      | Encapsular páginas, fixtures, datos           | [ver](docs/nivel-2-pom.md) |
-| 3 🔵  | Screenplay             | Actores, tasks, questions                     | [ver](docs/nivel-3-screenplay.md) |
-| 4 🟣  | BDD con Cucumber       | Gherkin, steps, World y hooks                 | [ver](docs/nivel-4-bdd.md) |
-| 5 🟠  | Integración Continua   | GitHub Actions: ejecutar todo en la nube      | [ver](docs/nivel-5-ci.md) |
+| 1 🟢  | Fundamentos Playwright | Localizadores, acciones y aserciones          | [ver](docs/01-niveles/nivel-1-basico.md) |
+| 2 🟡  | Page Object Model      | Encapsular páginas, fixtures, datos           | [ver](docs/01-niveles/nivel-2-pom.md) |
+| 3 🔵  | Screenplay             | Actores, tasks, questions                     | [ver](docs/01-niveles/nivel-3-screenplay.md) |
+| 4 🟣  | BDD con Cucumber       | Gherkin, steps, World y hooks                 | [ver](docs/01-niveles/nivel-4-bdd.md) |
+| 5 🟠  | Integración Continua   | GitHub Actions: ejecutar todo en la nube      | [ver](docs/01-niveles/nivel-5-ci.md) |
 
-👉 Empieza por el **[sílabus completo](docs/silabus.md)** y practica con el
-**[banco de ejercicios](docs/ejercicios.md)**.
+👉 Empieza por el **[sílabus completo](docs/00-inicio/silabus.md)** y practica con el
+**[banco de ejercicios](docs/00-inicio/ejercicios.md)**.
 
 ---
 
@@ -110,9 +110,9 @@ Cada nivel introduce una abstracción mayor sobre el mismo caso de estudio.
 
 Todo el material vive en **[`docs/`](docs/README.md)**:
 
-- **Inicio:** [Configuración del entorno](docs/configuracion-entorno.md) · [Sílabus](docs/silabus.md) · [Ejercicios](docs/ejercicios.md)
-- **Guías transversales:** [TypeScript](docs/guia-typescript.md) · [BDD](docs/guia-bdd.md) · [CI/CD](docs/guia-ci.md)
-- **Proceso:** [Flujo de trabajo Git](docs/git-workflow.md) · [Contribución](CONTRIBUTING.md)
+- **Inicio:** [Configuración del entorno](docs/00-inicio/configuracion-entorno.md) · [Sílabus](docs/00-inicio/silabus.md) · [Ejercicios](docs/00-inicio/ejercicios.md)
+- **Guías transversales:** [TypeScript](docs/02-guias/guia-typescript.md) · [BDD](docs/02-guias/guia-bdd.md) · [CI/CD](docs/02-guias/guia-ci.md)
+- **Proceso:** [Flujo de trabajo Git](docs/03-proceso/git-workflow.md) · [Contribución](CONTRIBUTING.md)
 
 ---
 
@@ -145,7 +145,7 @@ Trabajamos con **GitFlow**: `main` (estable) y `develop` (integración), ambas
 protegidas; el trabajo entra por ramas `feature/*` y **Pull Requests** que
 deben pasar la CI y una revisión.
 
-- 📖 [Modelo de ramas y proceso](docs/git-workflow.md)
+- 📖 [Modelo de ramas y proceso](docs/03-proceso/git-workflow.md)
 - ✅ [Convenciones de contribución](CONTRIBUTING.md)
 
 ---

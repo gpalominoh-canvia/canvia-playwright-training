@@ -1,9 +1,9 @@
-# Nivel 5 — Integración Continua (CI)
+﻿# Nivel 5 — Integración Continua (CI)
 
 > Ejecutar automáticamente todas las suites (niveles 1–4) en cada push y Pull
 > Request mediante **GitHub Actions**.
 
-📖 Antes de este nivel, lee la guía conceptual: [guia-ci.md](guia-ci.md).
+📖 Antes de este nivel, lee la guía conceptual: [guia-ci.md](../02-guias/guia-ci.md).
 
 ## Objetivos
 
@@ -14,7 +14,7 @@
 
 ## El pipeline del proyecto
 
-Todo vive en un solo archivo: [`.github/workflows/e2e.yml`](../.github/workflows/e2e.yml).
+Todo vive en un solo archivo: [`.github/workflows/e2e.yml`](../../.github/workflows/e2e.yml).
 
 ```
 evento (push / PR / manual / cron)
@@ -98,4 +98,4 @@ En una rama `feature/<tu-nombre>-nivel5`:
 
 ---
 
-<sub>📚 <a href="README.md">Índice de documentación</a> · <a href="../README.md">Inicio del repositorio</a></sub>
+<sub>📚 <a href="../README.md">Índice de documentación</a> · <a href="../../README.md">Inicio del repositorio</a></sub>

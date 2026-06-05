@@ -1,14 +1,14 @@
-# Sílabus — Capacitación Playwright QA Automation
+﻿# Sílabus — Capacitación Playwright QA Automation
 
 Programa de **10 sesiones** organizado en **5 niveles** (2 sesiones por nivel).
 Cada nivel introduce un nivel de abstracción mayor sobre el mismo caso de
 estudio (sitio de práctica **SauceDemo**), para que se vea la evolución de un
 test "plano" hasta BDD con Cucumber y su ejecución en CI.
 
-> 📘 Material transversal de apoyo: [guia-typescript.md](guia-typescript.md)
+> 📘 Material transversal de apoyo: [guia-typescript.md](../02-guias/guia-typescript.md)
 > (conceptos de TypeScript usados en todos los niveles),
-> [guia-bdd.md](guia-bdd.md) (teoría de BDD para el Nivel 4) y
-> [guia-ci.md](guia-ci.md) (teoría de CI/CD para el Nivel 5).
+> [guia-bdd.md](../02-guias/guia-bdd.md) (teoría de BDD para el Nivel 4) y
+> [guia-ci.md](../02-guias/guia-ci.md) (teoría de CI/CD para el Nivel 5).
 
 ## Objetivos generales
 
@@ -51,7 +51,7 @@ Al finalizar, el participante será capaz de:
 
 ### Nivel 1 — Fundamentos de Playwright
 
-> Guía detallada: [nivel-1-basico.md](nivel-1-basico.md)
+> Guía detallada: [nivel-1-basico.md](../01-niveles/nivel-1-basico.md)
 
 **Clase 1 — Primer test y herramientas**
 - Qué es Playwright y por qué. Instalación y `playwright.config.ts`.
@@ -67,7 +67,7 @@ Al finalizar, el participante será capaz de:
 
 ### Nivel 2 — Page Object Model (POM)
 
-> Guía detallada: [nivel-2-pom.md](nivel-2-pom.md)
+> Guía detallada: [nivel-2-pom.md](../01-niveles/nivel-2-pom.md)
 
 **Clase 3 — Introducción al POM**
 - Problema de los tests planos: duplicación y fragilidad.
@@ -82,7 +82,7 @@ Al finalizar, el participante será capaz de:
 
 ### Nivel 3 — Patrón Screenplay
 
-> Guía detallada: [nivel-3-screenplay.md](nivel-3-screenplay.md)
+> Guía detallada: [nivel-3-screenplay.md](../01-niveles/nivel-3-screenplay.md)
 
 **Clase 5 — Conceptos de Screenplay**
 - Limitaciones del POM al crecer. Principio SOLID detrás de Screenplay.
@@ -96,7 +96,7 @@ Al finalizar, el participante será capaz de:
 
 ### Nivel 4 — BDD con Cucumber
 
-> Guías: [nivel-4-bdd.md](nivel-4-bdd.md) y teoría en [guia-bdd.md](guia-bdd.md)
+> Guías: [nivel-4-bdd.md](../01-niveles/nivel-4-bdd.md) y teoría en [guia-bdd.md](../02-guias/guia-bdd.md)
 
 **Clase 7 — Fundamentos de BDD y Gherkin**
 - Qué es BDD, los "Tres Amigos" y la documentación viva.
@@ -111,7 +111,7 @@ Al finalizar, el participante será capaz de:
 
 ### Nivel 5 — Integración Continua (CI)
 
-> Guías: [nivel-5-ci.md](nivel-5-ci.md) y teoría en [guia-ci.md](guia-ci.md)
+> Guías: [nivel-5-ci.md](../01-niveles/nivel-5-ci.md) y teoría en [guia-ci.md](../02-guias/guia-ci.md)
 
 **Clase 9 — Fundamentos de CI/CD y GitHub Actions**
 - Qué es CI/CD y por qué importa en QA. Anatomía de un workflow.
@@ -130,7 +130,7 @@ Al finalizar, el participante será capaz de:
 
 - Cada clase: ~30% teoría, ~70% práctica en vivo.
 - Todo el código se entrega vía **Pull Request** a `develop` siguiendo
-  [git-workflow.md](git-workflow.md).
+  [git-workflow.md](../03-proceso/git-workflow.md).
 - Los ejercicios se trabajan en ramas `feature/<nombre>-<ejercicio>`.
 
 ## Evaluación
@@ -145,8 +145,8 @@ Al finalizar, el participante será capaz de:
 
 - Sitio de práctica: https://www.saucedemo.com
 - Documentación oficial: https://playwright.dev
-- Flujo de trabajo Git del curso: [git-workflow.md](git-workflow.md)
+- Flujo de trabajo Git del curso: [git-workflow.md](../03-proceso/git-workflow.md)
 
 ---
 
-<sub>📚 <a href="README.md">Índice de documentación</a> · <a href="../README.md">Inicio del repositorio</a></sub>
+<sub>📚 <a href="../README.md">Índice de documentación</a> · <a href="../../README.md">Inicio del repositorio</a></sub>

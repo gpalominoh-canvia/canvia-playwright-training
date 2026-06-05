@@ -1,4 +1,4 @@
-# Banco de ejercicios
+﻿# Banco de ejercicios
 
 Ejercicios prácticos por nivel. Cada uno se entrega como **Pull Request** a la
 rama `develop` y luego se revisa **en conjunto** (sesión de revisión asistida
@@ -10,7 +10,7 @@ por IA con el instructor) para ver qué estuvo bien, qué falló y qué faltó.
 
 ## 📤 Cómo entregar un ejercicio (léelo una vez)
 
-Sigue siempre este flujo (detalle completo en [git-workflow.md](git-workflow.md)):
+Sigue siempre este flujo (detalle completo en [git-workflow.md](../03-proceso/git-workflow.md)):
 
 ```bash
 # 1. Parte de develop actualizado
@@ -134,4 +134,4 @@ En la revisión conjunta veremos sobre tu PR:
 
 ---
 
-<sub>📚 <a href="README.md">Índice de documentación</a> · <a href="../README.md">Inicio del repositorio</a></sub>
+<sub>📚 <a href="../README.md">Índice de documentación</a> · <a href="../../README.md">Inicio del repositorio</a></sub>

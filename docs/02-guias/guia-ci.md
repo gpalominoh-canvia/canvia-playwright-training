@@ -1,7 +1,7 @@
-# Guía completa de CI/CD para QA Automation
+﻿# Guía completa de CI/CD para QA Automation
 
 Guía conceptual de Integración Continua, base teórica del
-[Nivel 5](nivel-5-ci.md). Foco en **GitHub Actions**, que es lo que usa este
+[Nivel 5](../01-niveles/nivel-5-ci.md). Foco en **GitHub Actions**, que es lo que usa este
 repositorio.
 
 ---
@@ -230,4 +230,4 @@ Muestra en el README si la build está pasando:
 
 ---
 
-<sub>📚 <a href="README.md">Índice de documentación</a> · <a href="../README.md">Inicio del repositorio</a></sub>
+<sub>📚 <a href="../README.md">Índice de documentación</a> · <a href="../../README.md">Inicio del repositorio</a></sub>

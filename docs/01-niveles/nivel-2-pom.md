@@ -1,4 +1,4 @@
-# Nivel 2 — Page Object Model (POM)
+﻿# Nivel 2 — Page Object Model (POM)
 
 > Encapsular cada página en una clase: menos duplicación, tests más legibles
 > y mantenibles.
@@ -87,4 +87,4 @@ En una rama `feature/<tu-nombre>-nivel2`:
 
 ---
 
-<sub>📚 <a href="README.md">Índice de documentación</a> · <a href="../README.md">Inicio del repositorio</a></sub>
+<sub>📚 <a href="../README.md">Índice de documentación</a> · <a href="../../README.md">Inicio del repositorio</a></sub>
