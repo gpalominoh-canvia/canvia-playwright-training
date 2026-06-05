@@ -1,13 +1,14 @@
 # Sílabus — Capacitación Playwright QA Automation
 
-Programa de **8 sesiones** organizado en **4 niveles** (2 sesiones por nivel).
+Programa de **10 sesiones** organizado en **5 niveles** (2 sesiones por nivel).
 Cada nivel introduce un nivel de abstracción mayor sobre el mismo caso de
 estudio (sitio de práctica **SauceDemo**), para que se vea la evolución de un
-test "plano" hasta BDD con Cucumber.
+test "plano" hasta BDD con Cucumber y su ejecución en CI.
 
 > 📘 Material transversal de apoyo: [guia-typescript.md](guia-typescript.md)
-> (conceptos de TypeScript usados en todos los niveles) y
-> [guia-bdd.md](guia-bdd.md) (teoría de BDD para el Nivel 4).
+> (conceptos de TypeScript usados en todos los niveles),
+> [guia-bdd.md](guia-bdd.md) (teoría de BDD para el Nivel 4) y
+> [guia-ci.md](guia-ci.md) (teoría de CI/CD para el Nivel 5).
 
 ## Objetivos generales
 
@@ -17,6 +18,7 @@ Al finalizar, el participante será capaz de:
 - Aplicar el patrón **Page Object Model (POM)**.
 - Aplicar el patrón **Screenplay**.
 - Implementar **BDD con Cucumber** (Gherkin + step definitions).
+- Ejecutar las pruebas en **CI con GitHub Actions**.
 - Trabajar con un flujo profesional de **GitFlow** (ramas, PRs, CI).
 
 ## Requisitos previos
@@ -36,6 +38,7 @@ Al finalizar, el participante será capaz de:
 | `src/nivel-2-pom/`            | 2     | Page Objects, fixtures, data               |
 | `src/nivel-3-screenplay/`     | 3     | Framework Screenplay propio                |
 | `src/nivel-4-bdd/`            | 4     | Step definitions, World y hooks de Cucumber|
+| `.github/workflows/e2e.yml`   | 5     | Pipeline de CI que ejecuta todos los niveles|
 | `docs/`                       | —     | Sílabus, guías por nivel y flujo Git       |
 
 ---
@@ -101,6 +104,21 @@ Al finalizar, el participante será capaz de:
 - World (estado compartido) y hooks (ciclo de vida del navegador).
 - Etiquetas (tags) y ejecución selectiva. Reportes.
 - Práctica: `tests/nivel-4-bdd/login.feature` + ejercicio guiado.
+
+### Nivel 5 — Integración Continua (CI)
+
+> Guías: [nivel-5-ci.md](nivel-5-ci.md) y teoría en [guia-ci.md](guia-ci.md)
+
+**Clase 9 — Fundamentos de CI/CD y GitHub Actions**
+- Qué es CI/CD y por qué importa en QA. Anatomía de un workflow.
+- Eventos (push, PR, manual, cron), jobs, steps, actions y runners.
+- Leer y ejecutar un workflow desde la pestaña Actions.
+
+**Clase 10 — El pipeline del proyecto**
+- Matrices (un job por nivel), `needs` y job agregador.
+- Artefactos y reportes (`if: always()`), caché y `npm ci`, `concurrency`.
+- CI como puerta de calidad (branch protection) y badge de estado.
+- Práctica: `.github/workflows/e2e.yml` + ejercicio guiado.
 
 ---
 

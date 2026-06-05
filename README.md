@@ -1,5 +1,7 @@
 # canvia-playwright-training
 
+[![E2E](https://github.com/gpalominoh-canvia/canvia-playwright-training/actions/workflows/e2e.yml/badge.svg)](https://github.com/gpalominoh-canvia/canvia-playwright-training/actions/workflows/e2e.yml)
+
 Framework base de automatización E2E con **Playwright + TypeScript** y buenas
 prácticas QA para capacitación interna.
 
@@ -46,7 +48,7 @@ npm run typecheck  # chequeo de tipos sin emitir
 
 ## Capacitación por niveles
 
-El repositorio está organizado en **4 niveles** progresivos (currículo de 8
+El repositorio está organizado en **5 niveles** progresivos (currículo de 10
 clases). Empieza por el sílabus:
 
 - 📚 [docs/silabus.md](docs/silabus.md) — plan de clases, objetivos y evaluación.
@@ -54,8 +56,9 @@ clases). Empieza por el sílabus:
 - 🟡 [Nivel 2 — POM](docs/nivel-2-pom.md): Page Object Model + fixtures.
 - 🔵 [Nivel 3 — Screenplay](docs/nivel-3-screenplay.md): patrón de comportamiento.
 - 🟣 [Nivel 4 — BDD](docs/nivel-4-bdd.md): Cucumber + Gherkin.
+- 🟠 [Nivel 5 — CI](docs/nivel-5-ci.md): GitHub Actions para ejecutar las pruebas.
 
-Guías de apoyo: [TypeScript](docs/guia-typescript.md) · [BDD](docs/guia-bdd.md).
+Guías de apoyo: [TypeScript](docs/guia-typescript.md) · [BDD](docs/guia-bdd.md) · [CI/CD](docs/guia-ci.md).
 
 ## Estructura del proyecto
 
@@ -70,8 +73,9 @@ Guías de apoyo: [TypeScript](docs/guia-typescript.md) · [BDD](docs/guia-bdd.md
 │   ├── nivel-2-pom/           # pages, fixtures, data
 │   ├── nivel-3-screenplay/    # framework Screenplay (core, abilities, tasks…)
 │   └── nivel-4-bdd/           # step definitions, World y hooks de Cucumber
-├── docs/                      # sílabus, guías por nivel, BDD, TypeScript, Git
-├── .github/                   # plantillas de PR/issues y CI
+├── docs/                      # sílabus, guías por nivel, BDD, TypeScript, CI, Git
+├── .github/
+│   └── workflows/e2e.yml      # Nivel 5: pipeline de CI (todos los niveles)
 ├── playwright.config.ts       # un "project" por nivel (1-3)
 ├── cucumber.js                # configuración de Cucumber (nivel 4)
 └── tsconfig.json
