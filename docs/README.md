@@ -32,6 +32,7 @@
 | [BDD](02-guias/guia-bdd.md)                           | Teoría completa de BDD (Nivel 4)            |
 | [CI/CD](02-guias/guia-ci.md)                          | Teoría de Integración Continua (Nivel 5)    |
 | [API testing](02-guias/guia-api-testing.md)           | Teoría de pruebas de API (Nivel 6)          |
+| [Locators](02-guias/guia-locators.md)                 | Cómo obtener y elegir buenos locators       |
 | [Buenas prácticas](02-guias/guia-buenas-practicas.md) | Reglas para tests estables y mantenibles    |
 | [Depuración](02-guias/guia-depuracion.md)             | Cómo investigar y resolver tests que fallan |
 
