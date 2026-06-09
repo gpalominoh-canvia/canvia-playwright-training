@@ -101,5 +101,3 @@ En la **descripción del PR** escribe `Refs #2` (el número de tu issue).
 ---
 
 <sub>📚 <a href="../README.md">Índice de documentación</a> · <a href="ejercicios.md">Banco de ejercicios</a></sub>
-</content>
-</invoke>
