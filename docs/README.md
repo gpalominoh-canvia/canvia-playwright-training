@@ -12,6 +12,7 @@
 1. [Configuración del entorno](00-inicio/configuracion-entorno.md) — deja tu máquina lista desde cero.
 2. [Sílabus](00-inicio/silabus.md) — el plan completo de 10 clases (5 niveles).
 3. [Banco de ejercicios](00-inicio/ejercicios.md) — práctica por nivel y cómo entregarla.
+4. [Cómo responder un ejercicio (issue)](00-inicio/como-responder-issues.md) — tomar el issue del nivel y entregar tu PR ligado.
 
 ## 📚 Niveles
 
