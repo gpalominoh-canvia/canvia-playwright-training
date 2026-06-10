@@ -7,11 +7,13 @@ import { BasePage } from './BasePage';
 export class InventoryPage extends BasePage {
   private readonly title: Locator;
   private readonly inventoryItems: Locator;
+  private readonly cartLink: Locator;
 
   constructor(page: Page) {
     super(page);
     this.title = page.locator('.title');
     this.inventoryItems = page.locator('.inventory_item');
+    this.cartLink = page.locator('[data-test="shopping-cart-link"]');
   }
 
   /** Texto del título de la sección ("Products"). */
@@ -22,5 +24,15 @@ export class InventoryPage extends BasePage {
   /** Cantidad de productos listados. */
   async getItemsCount(): Promise<number> {
     return this.inventoryItems.count();
+  }
+
+  async addProductToCart(productName: string): Promise<void> {
+    const product = this.inventoryItems.filter({ hasText: productName });
+    await product.locator('button').click();
+  }
+
+  /** Hace click en el icono del carrito para navegar */
+  async openCart(): Promise<void> {
+    await this.cartLink.click();
   }
 }
