@@ -30,7 +30,7 @@ test.describe('Carrito', () => {
     await expect(cartPage.itemByName(producto)).toBeVisible();
   });
 
-  test('Quitar producto y validar que ya no esta en carrito', async ({inventoryPage, cartPage})=> {
+  test('Quitar producto y validar que ya no esta en carrito', async ({inventoryPage})=> {
     const producto=products.bolttshirt;
     await inventoryPage.AgregaProducto(producto);
     await expect(inventoryPage.cartbadge).toHaveText('1');
