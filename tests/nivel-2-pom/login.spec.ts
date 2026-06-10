@@ -26,7 +26,6 @@ test.describe('Login', () => {
 
   test('muestra error con usuario bloqueado', async ({ loginPage }) => {
     await loginPage.login(users.locked.username, users.locked.password);
-
     expect(await loginPage.getErrorMessage()).toContain('locked out');
   });
 });
