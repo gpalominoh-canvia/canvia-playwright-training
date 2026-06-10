@@ -33,4 +33,9 @@ export class InventoryPage extends BasePage {
   async openCart(): Promise<void> {
     await this.cartLink.click();
   }
+  /** Quita un producto del carrito usando su nombre visible. */
+  async removeProductFromCart(productName: string): Promise<void> {
+    const product = this.inventoryItems.filter({ hasText: productName });
+    await product.getByRole('button', { name: 'Remove' }).click();
+  }
 }
