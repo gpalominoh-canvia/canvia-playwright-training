@@ -114,6 +114,7 @@ Todo el material vive en **[`docs/`](docs/README.md)**:
 
 - **Inicio:** [Configuración del entorno](docs/00-inicio/configuracion-entorno.md) · [Sílabus](docs/00-inicio/silabus.md) · [Ejercicios](docs/00-inicio/ejercicios.md)
 - **Guías transversales:** [TypeScript](docs/02-guias/guia-typescript.md) · [Locators](docs/02-guias/guia-locators.md) · [BDD](docs/02-guias/guia-bdd.md) · [CI/CD](docs/02-guias/guia-ci.md) · [API testing](docs/02-guias/guia-api-testing.md) · [Buenas prácticas](docs/02-guias/guia-buenas-practicas.md) · [Depuración](docs/02-guias/guia-depuracion.md)
+- **Recursos de aprendizaje:** [Videos y material por nivel](docs/02-guias/recursos-aprendizaje.md)
 - **Proceso:** [Flujo de trabajo Git](docs/03-proceso/git-workflow.md) · [Contribución](CONTRIBUTING.md)
 
 ---
