@@ -23,4 +23,12 @@ export class InventoryPage extends BasePage {
   async getItemsCount(): Promise<number> {
     return this.inventoryItems.count();
   }
+
+  async addProductToCart(productName: string): Promise<void> {
+  const product = this.page
+    .locator('[data-test="inventory-item"]')
+    .filter({ hasText: productName });
+
+  await product.getByRole('button', { name: 'Add to cart' }).click();
+}
 }
