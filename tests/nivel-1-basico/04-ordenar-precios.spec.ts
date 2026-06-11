@@ -9,7 +9,9 @@ test('ordenar por precio menor a mayor', async ({ page }) => {
 
   await page.locator('[data-test="product-sort-container"]').selectOption('lohi');
 
-  const primerPrecio = page.locator('[data-test="inventory-item-price"]').first();
+  const precios = await page.locator('[data-test="inventory-item-price"]').allInnerTexts();
 
-  await expect(primerPrecio).toHaveText('$7.99');
+  const numeros = precios.map((p) => Number(p.replace('$', '')));
+
+  expect(numeros[0]).toBe(Math.min(...numeros));
 });
