@@ -1,0 +1,146 @@
+[33mcommit 4b845a5f0fd97424323767e32466fa0a4af42736[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mfeature/andreaCondori-nivel2-pom[m[33m, [m[1;31morigin/feature/andreaCondori-nivel2-pom[m[33m)[m
+Author: andreaMonica <andreamcondorihuayunga@gmail.com>
+Date:   Wed Jun 10 10:11:45 2026 -0500
+
+     refactor: limpieza en cart.spect.ts
+
+[33mcommit df9c64c6ef0b6ba83afdb674502db03385af4e22[m
+Author: andreaMonica <andreamcondorihuayunga@gmail.com>
+Date:   Wed Jun 10 10:01:07 2026 -0500
+
+    feat:Agrego Page Cart, agrego metodo addProductToCart en Page Inventory modifico fixture, implemento el flujo del test:Carrito de compras
+
+[33mcommit 35ff605bef7ee5a98c4c07539534ffd6132ef251[m[33m ([m[1;31morigin/feature/andreaCondori-nivel1-ejercicio1[m[33m, [m[1;32mfeature/andreaCondori-nivel1-ejercicio1[m[33m)[m
+Author: andreaMonica <andreamcondorihuayunga@gmail.com>
+Date:   Wed Jun 10 09:49:44 2026 -0500
+
+    test(nivel1): validar visibilidad del menú y validar usuario bloqueado
+
+[33mcommit a3ec78211d3e12d8b85158f65d08fe64184529be[m[33m ([m[1;31morigin/feature/melissaquesada-nivel1-creacionderama[m[33m, [m[1;31morigin/feature/jcueva-nivel1-ejercicio01[m[33m, [m[1;32mdevelop[m[33m)[m
+Merge: d588409 37c6722
+Author: Giancarlo Palomino <46004462+gpalominoh-canvia@users.noreply.github.com>
+Date:   Fri Jun 5 14:55:19 2026 -0500
+
+    Merge pull request #9 from gpalominoh-canvia/feature/guia-locators
+    
+    docs: guía de cómo obtener y elegir locators
+
+[33mcommit 37c6722afebc1309e5c476efab44f83a4eec3216[m
+Author: Giancarlo Palomino <ing.palominoh@gmail.com>
+Date:   Fri Jun 5 14:38:38 2026 -0500
+
+    docs: agregar guía de cómo obtener y elegir locators
+    
+    - Nueva guía docs/02-guias/guia-locators.md (prioridad, herramientas,
+      Pick Locator, codegen, DevTools, strict mode, filtros y cheatsheet)
+    - Enlazar desde el índice de docs, el README y el Nivel 1
+
+[33mcommit d588409c7f7cf2f3ff204889a14160efd3304457[m
+Merge: 34e1f87 38c1a82
+Author: Giancarlo Palomino <46004462+gpalominoh-canvia@users.noreply.github.com>
+Date:   Fri Jun 5 14:13:03 2026 -0500
+
+    Merge pull request #1 from gpalominoh-canvia/feature/scaffold-playwright-base
+    
+    feat: estructura de capacitacion Playwright en 3 niveles con silabus
+
+[33mcommit 38c1a827714d83e9b68e1e304e8dc0e014989a77[m
+Author: Giancarlo Palomino <ing.palominoh@gmail.com>
+Date:   Fri Jun 5 14:11:10 2026 -0500
+
+    feat: agregar Nivel 6 (pruebas de API) con cliente, fixture y guías
+    
+    - Project nivel-6-api en playwright.config + script test:nivel-6 y alias @api
+    - API client PostsApi + fixture y suite tests/nivel-6-api/posts.spec.ts
+    - Documentar nivel-6-api.md y guia-api-testing.md (con pirámide de pruebas)
+    - Agregar nivel-6-api a la matriz de CI
+    - Actualizar sílabus a 12 clases (6 niveles), README, índice y ejercicios
+
+[33mcommit e856bfe87863f25efd8a2fc1c7d26d6e484e9e53[m
+Author: Giancarlo Palomino <ing.palominoh@gmail.com>
+Date:   Fri Jun 5 14:01:35 2026 -0500
+
+    chore: agregar hook pre-commit y guías de buenas prácticas y depuración
+    
+    - Configurar Husky + lint-staged (pre-commit: lint-staged + typecheck)
+    - Agregar guia-buenas-practicas.md y guia-depuracion.md
+    - Agregar diagramas Mermaid (GitFlow, Screenplay, BDD y pipeline CI)
+    - Enlazar nuevas guías en índice y README; nota del hook en CONTRIBUTING
+
+[33mcommit f80a4a275d0fad2dc7213b7638e65723dec059eb[m
+Author: Giancarlo Palomino <ing.palominoh@gmail.com>
+Date:   Fri Jun 5 13:56:21 2026 -0500
+
+    docs: organizar documentación en subcarpetas por categoría
+    
+    - Agrupar docs en 00-inicio, 01-niveles, 02-guias y 03-proceso
+    - Actualizar índice, enlaces internos, footers y enlaces del README/CONTRIBUTING
+    - Verificado: sin enlaces locales rotos
+
+[33mcommit 54d76d2390d1b63af370793854dd1bb4b40ec538[m
+Author: Giancarlo Palomino <ing.palominoh@gmail.com>
+Date:   Fri Jun 5 13:46:35 2026 -0500
+
+    docs: agregar guía de entorno, ejercicios y reestructurar documentación
+    
+    - Agregar docs/configuracion-entorno.md (Node, Git, VS Code, extensiones, comandos)
+    - Agregar docs/ejercicios.md (banco por nivel + proceso de entrega y revisión por PR)
+    - Agregar índice de documentación docs/README.md y pie de navegación en cada doc
+    - Reescribir README con logo de Canvia, badges, tabla de contenidos y secciones
+    - Compartir recomendaciones de VS Code (.vscode/extensions.json y settings.json)
+
+[33mcommit 16fdad96c09aadce150a91672545fec660b7f62d[m
+Author: Giancarlo Palomino <ing.palominoh@gmail.com>
+Date:   Fri Jun 5 13:41:01 2026 -0500
+
+    feat: agregar Nivel 5 (CI con GitHub Actions) y guía de CI/CD
+    
+    - Crear pipeline e2e.yml: jobs calidad, playwright (matriz niveles 1-3),
+      cucumber (nivel 4) y agregador ci-ok como puerta de calidad
+    - Disparadores push/PR/manual/programado, caché npm, artefactos y concurrency
+    - Reemplazar el ci.yml inicial por el pipeline completo
+    - Documentar guia-ci.md (teoría CI/CD) y nivel-5-ci.md
+    - Actualizar sílabus a 10 clases (5 niveles), README y badge de estado
+
+[33mcommit 3a5117fe6d38ebf51a52fbb7ebb2f3880a36f28e[m
+Author: Giancarlo Palomino <ing.palominoh@gmail.com>
+Date:   Fri Jun 5 13:34:44 2026 -0500
+
+    feat: agregar Nivel 4 (BDD con Cucumber) y guías de BDD y TypeScript
+    
+    - Integrar Cucumber + Playwright: world, hooks, step definitions y feature
+    - Configurar cucumber.js (tsx) y script test:nivel-4; CI ejecuta BDD
+    - Override de ESLint para los step definitions
+    - Documentar guia-bdd.md (teoría completa) y nivel-4-bdd.md
+    - Documentar guia-typescript.md orientada a entender el framework
+    - Actualizar sílabus a 8 clases (4 niveles) y README
+
+[33mcommit 090be86d1aee7ce4cd27327590419da8a97b8324[m
+Author: Giancarlo Palomino <ing.palominoh@gmail.com>
+Date:   Fri Jun 5 13:23:42 2026 -0500
+
+    feat: estructurar capacitación Playwright en 3 niveles con sílabus
+    
+    - Configurar proyecto Playwright + TypeScript (config, tsconfig, eslint, prettier)
+    - Nivel 1 (básico): tests planos de login e interacciones
+    - Nivel 2 (POM): page objects, fixtures y datos externos
+    - Nivel 3 (Screenplay): framework propio (actor, abilities, tasks, questions)
+    - playwright.config con un project por nivel y scripts test:nivel-1/2/3
+    - Documentar sílabus de 6 clases y guías por nivel en docs/
+
+[33mcommit 34e1f8744a410ed6a9d1e96e629b4b98b00202d0[m
+Author: Giancarlo Palomino <ing.palominoh@gmail.com>
+Date:   Fri Jun 5 12:55:51 2026 -0500
+
+    chore: establecer arquitectura GitFlow y gobernanza del repositorio
+    
+    - Documentar modelo de ramas, naming y convenciones en docs/git-workflow.md
+    - Agregar CONTRIBUTING.md y plantilla de commits (.gitmessage.txt)
+    - Agregar plantillas de PR e issues, CODEOWNERS y workflow de CI
+    - Ampliar .gitignore (Playwright y herramientas locales)
+
+[33mcommit 399dd20d1a497a62baca572a3642b9295efbec32[m
+Author: Giancarlo Palomino <46004462+gpalominoh-canvia@users.noreply.github.com>
+Date:   Fri Jun 5 11:53:37 2026 -0500
+
+    Initial commit
