@@ -1,9 +1,7 @@
 import { test, expect } from '@playwright/test';
 
-const BASE_URL = process.env.BASE_URL as string;
-
 test('order by', async ({ page }) => {
-  await page.goto(BASE_URL);
+  await page.goto('/');
 
   await page.locator('[data-test="username"]').fill('standard_user');
   await page.locator('[data-test="password"]').fill('secret_sauce');
