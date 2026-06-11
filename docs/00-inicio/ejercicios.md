@@ -10,6 +10,11 @@ por IA con el instructor) para ver qué estuvo bien, qué falló y qué faltó.
 
 ## 📤 Cómo entregar un ejercicio (léelo una vez)
 
+Cada nivel se publica como un **issue** en GitHub (etiqueta `ejercicio`). Cómo
+tomarlo y entregar tu PR ligado está en
+[cómo responder un ejercicio (issue)](como-responder-issues.md). Regla base:
+**un ejercicio = una rama = un PR**.
+
 Sigue siempre este flujo (detalle completo en [git-workflow.md](../03-proceso/git-workflow.md)):
 
 ```bash
@@ -18,8 +23,8 @@ git checkout develop
 git pull origin develop
 
 # 2. Crea tu rama con tu nombre y el nivel
-git checkout -b feature/<tu-nombre>-nivel<N>-<ejercicio>
-# ej: feature/maria-nivel1-menu
+git checkout -b feature/<tu-nombre>-nivel<N>-ejercicio<NN>
+# ej: feature/maria-nivel1-ejercicio03
 
 # 3. Trabaja y commitea en pequeños pasos (commits en español)
 git add .
@@ -34,7 +39,7 @@ git push -u origin feature/<tu-nombre>-nivel1-menu
 
 ### Checklist antes de pedir revisión
 
-- [ ] La rama sigue la convención `feature/<nombre>-nivel<N>-<tema>`.
+- [ ] La rama sigue la convención `feature/<nombre>-nivel<N>-ejercicio<NN>`.
 - [ ] Commits con Conventional Commits en español.
 - [ ] `npm run typecheck` y `npm run lint` pasan.
 - [ ] Tus pruebas pasan localmente.
@@ -140,11 +145,11 @@ En la revisión conjunta veremos sobre tu PR:
 
 ## Criterios de evaluación (recordatorio)
 
-| Criterio                                     | Peso |
-| -------------------------------------------- | ---- |
-| Ejercicios entregados por PR (uno por nivel) | 60%  |
-| Aplicación correcta del patrón del nivel     | 25%  |
-| Buenas prácticas Git (ramas, commits, CI)    | 15%  |
+| Criterio                                           | Peso |
+| -------------------------------------------------- | ---- |
+| Ejercicios entregados por PR (un PR por ejercicio) | 60%  |
+| Aplicación correcta del patrón del nivel           | 25%  |
+| Buenas prácticas Git (ramas, commits, CI)          | 15%  |
 
 ---
 
