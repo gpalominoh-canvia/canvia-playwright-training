@@ -1,0 +1,50 @@
+{
+  "name": "canvia-playwright-training",
+  "version": "0.1.0",
+  "description": "Framework base de automatización E2E con Playwright, TypeScript y buenas prácticas QA para capacitación interna.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "test:debug": "playwright test --debug",
+    "test:nivel-1": "playwright test --project=nivel-1-basico",
+    "test:nivel-2": "playwright test --project=nivel-2-pom",
+    "test:nivel-3": "playwright test --project=nivel-3-screenplay",
+    "test:nivel-4": "cross-env NODE_OPTIONS=--import=tsx cucumber-js",
+    "test:nivel-4.1": "cross-env NODE_OPTIONS=--import=tsx cucumber-js --profile nivel41",
+    "test:nivel-6": "playwright test --project=nivel-6-api",
+    "report": "playwright show-report",
+    "codegen": "playwright codegen",
+    "lint": "eslint . --ext .ts",
+    "format": "prettier --write \"**/*.{ts,json,md}\"",
+    "format:check": "prettier --check \"**/*.{ts,json,md}\"",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "playwright",
+    "e2e",
+    "qa",
+    "automation",
+    "typescript"
+  ],
+  "author": "Canvia QA",
+  "license": "MIT",
+  "devDependencies": {
+    "@cucumber/cucumber": "^11.2.0",
+    "@playwright/test": "^1.49.1",
+    "@types/node": "^22.10.5",
+    "@typescript-eslint/eslint-plugin": "^8.19.1",
+    "@typescript-eslint/parser": "^8.19.1",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.4.7",
+    "eslint": "^8.57.1",
+    "eslint-plugin-playwright": "^2.1.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
+    "prettier": "^3.4.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
+  }
+}
