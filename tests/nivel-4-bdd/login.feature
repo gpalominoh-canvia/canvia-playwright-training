@@ -19,6 +19,7 @@ Característica: Inicio de sesión
     Cuando inicio sesión con usuario "locked_out_user" y contraseña "secret_sauce"
     Entonces debería ver el mensaje de error "Sorry, this user has been locked out"
 
+@invalid_credentials
   Esquema del escenario: Validación de credenciales inválidas
     Cuando inicio sesión con usuario "<usuario>" y contraseña "<contrasena>"
     Entonces debería ver el mensaje de error "Username and password do not match"
@@ -27,3 +28,11 @@ Característica: Inicio de sesión
       | usuario        | contrasena      |
       | usuario_x      | clave_y         |
       | otro_usuario   | otra_clave      |
+
+  @logout
+  Esquema del escenario: Logout después de iniciar sesión
+    Dado inicio sesión con usuario "standard_user" y contraseña "secret_sauce"
+    Cuando cierro sesión
+    Entonces debería volver a la página de login
+
+    
