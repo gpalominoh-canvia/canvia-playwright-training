@@ -31,7 +31,7 @@
   "author": "Canvia QA",
   "license": "MIT",
   "devDependencies": {
-    "@cucumber/cucumber": "^11.2.0",
+    "@cucumber/cucumber": "^13.0.0",
     "@playwright/test": "^1.49.1",
     "@types/node": "^22.10.5",
     "@typescript-eslint/eslint-plugin": "^8.19.1",
