@@ -29,7 +29,7 @@ module.exports = {
     {
       // Los step definitions de Cucumber usan `expect` fuera de un bloque
       // `test()`, por lo que desactivamos las reglas del plugin de Playwright.
-      files: ['src/nivel-4-bdd/**/*.ts'],
+      files: ['src/nivel-4-bdd/**/*.ts', 'src/nivel-4.1-bdd-screenplay/**/*.ts'],
       rules: {
         'playwright/no-standalone-expect': 'off',
         'playwright/expect-expect': 'off',

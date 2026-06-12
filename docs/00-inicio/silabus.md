@@ -35,19 +35,20 @@ Al finalizar, el participante será capaz de:
 
 ## Estructura del repositorio
 
-| Carpeta                     | Nivel | Contenido                                    |
-| --------------------------- | ----- | -------------------------------------------- |
-| `tests/nivel-1-basico/`     | 1     | Tests planos (sin patrón)                    |
-| `tests/nivel-2-pom/`        | 2     | Tests con Page Object Model                  |
-| `tests/nivel-3-screenplay/` | 3     | Tests con Screenplay                         |
-| `tests/nivel-4-bdd/`        | 4     | Escenarios Gherkin (`.feature`)              |
-| `src/nivel-2-pom/`          | 2     | Page Objects, fixtures, data                 |
-| `src/nivel-3-screenplay/`   | 3     | Framework Screenplay propio                  |
-| `src/nivel-4-bdd/`          | 4     | Step definitions, World y hooks de Cucumber  |
-| `.github/workflows/e2e.yml` | 5     | Pipeline de CI que ejecuta todos los niveles |
-| `tests/nivel-6-api/`        | 6     | Pruebas de API                               |
-| `src/nivel-6-api/`          | 6     | API client y fixture                         |
-| `docs/`                     | —     | Sílabus, guías por nivel y flujo Git         |
+| Carpeta                         | Nivel | Contenido                                    |
+| ------------------------------- | ----- | -------------------------------------------- |
+| `tests/nivel-1-basico/`         | 1     | Tests planos (sin patrón)                    |
+| `tests/nivel-2-pom/`            | 2     | Tests con Page Object Model                  |
+| `tests/nivel-3-screenplay/`     | 3     | Tests con Screenplay                         |
+| `tests/nivel-4-bdd/`            | 4     | Escenarios Gherkin (`.feature`)              |
+| `src/nivel-2-pom/`              | 2     | Page Objects, fixtures, data                 |
+| `src/nivel-3-screenplay/`       | 3     | Framework Screenplay propio                  |
+| `src/nivel-4-bdd/`              | 4     | Step definitions, World y hooks de Cucumber  |
+| `src/nivel-4.1-bdd-screenplay/` | 4.1   | Steps que delegan en el Actor de Screenplay  |
+| `.github/workflows/e2e.yml`     | 5     | Pipeline de CI que ejecuta todos los niveles |
+| `tests/nivel-6-api/`            | 6     | Pruebas de API                               |
+| `src/nivel-6-api/`              | 6     | API client y fixture                         |
+| `docs/`                         | —     | Sílabus, guías por nivel y flujo Git         |
 
 ---
 
