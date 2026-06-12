@@ -109,6 +109,23 @@ En la revisión conjunta veremos sobre tu PR:
 
 ---
 
+## 🟣 Nivel 4.1 — BDD + Screenplay
+
+> Carpeta de trabajo: `src/nivel-4.1-bdd-screenplay/` y
+> `tests/nivel-4.1-bdd-screenplay/`. Ejecuta con `npm run test:nivel-4.1`.
+
+1. **Steps sin selectores:** reescribe un escenario para que el step delegue en
+   `this.actor.attemptsTo(...)` en vez de usar `this.page`.
+2. **Carrito (feature nueva):** crea `carrito.feature` y resuélvelo con una Task
+   `AddProductToCart` y una Question para el badge del carrito.
+3. **Logout:** agrega un escenario de cierre de sesión reutilizando una Task
+   `Logout` del Nivel 3.
+4. **Aserción por Question:** valida la URL o el título con una Question, no
+   leyendo `this.page` directamente.
+5. **(Reto)** Comparte Tasks/Questions entre el Nivel 3 y el 4.1 sin duplicar.
+
+---
+
 ## 🟠 Nivel 5 — CI
 
 > Archivo de trabajo: `.github/workflows/e2e.yml`

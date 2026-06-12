@@ -15,14 +15,15 @@
 
 ## 📚 Niveles
 
-| Nivel | Tema                   | Guía                                                      |
-| ----- | ---------------------- | --------------------------------------------------------- |
-| 1 🟢  | Fundamentos Playwright | [nivel-1-basico.md](01-niveles/nivel-1-basico.md)         |
-| 2 🟡  | Page Object Model      | [nivel-2-pom.md](01-niveles/nivel-2-pom.md)               |
-| 3 🔵  | Screenplay             | [nivel-3-screenplay.md](01-niveles/nivel-3-screenplay.md) |
-| 4 🟣  | BDD con Cucumber       | [nivel-4-bdd.md](01-niveles/nivel-4-bdd.md)               |
-| 5 🟠  | Integración Continua   | [nivel-5-ci.md](01-niveles/nivel-5-ci.md)                 |
-| 6 🔴  | Pruebas de API         | [nivel-6-api.md](01-niveles/nivel-6-api.md)               |
+| Nivel  | Tema                   | Guía                                                                  |
+| ------ | ---------------------- | --------------------------------------------------------------------- |
+| 1 🟢   | Fundamentos Playwright | [nivel-1-basico.md](01-niveles/nivel-1-basico.md)                     |
+| 2 🟡   | Page Object Model      | [nivel-2-pom.md](01-niveles/nivel-2-pom.md)                           |
+| 3 🔵   | Screenplay             | [nivel-3-screenplay.md](01-niveles/nivel-3-screenplay.md)             |
+| 4 🟣   | BDD con Cucumber       | [nivel-4-bdd.md](01-niveles/nivel-4-bdd.md)                           |
+| 4.1 🟣 | BDD + Screenplay       | [nivel-4.1-bdd-screenplay.md](01-niveles/nivel-4.1-bdd-screenplay.md) |
+| 5 🟠   | Integración Continua   | [nivel-5-ci.md](01-niveles/nivel-5-ci.md)                             |
+| 6 🔴   | Pruebas de API         | [nivel-6-api.md](01-niveles/nivel-6-api.md)                           |
 
 ## 🧠 Guías transversales
 
