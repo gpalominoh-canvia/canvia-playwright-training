@@ -6,6 +6,7 @@ import { products } from '@pom/data/products';
  * Suite de ejemplo: inicio de sesión en SauceDemo.
  * Sirve como referencia del patrón POM + fixtures para la capacitación.
  */
+
 test.describe('Carrito', () => {
   test.beforeEach(async ({ loginPage }) => {
     await loginPage.open();
@@ -13,15 +14,17 @@ test.describe('Carrito', () => {
   });
 
   test('agregar producto y validar carrito', async ({ inventoryPage }) => {
-    await inventoryPage.AgregaProducto(products.backpack);
-    await expect(inventoryPage.cartbabge).toHaveText('1');
+    await inventoryPage.agregarProducto(products.backpack);
+    expect(await inventoryPage.cantidadEnCarrito()).toBe(1);
   });
 
-  test('Producto agregado se ve en carrito', async ({ inventoryPage, cartPage }) => {
+  test('producto agregado se ve en carrito', async ({ inventoryPage, cartPage }) => {
     const producto = products.bolttshirt;
-    await inventoryPage.AgregaProducto(products.bolttshirt);
-    await expect(inventoryPage.cartbabge).toHaveText('1');
-    await inventoryPage.OpenCart();
+
+    await inventoryPage.agregarProducto(producto);
+    expect(await inventoryPage.cantidadEnCarrito()).toBe(1);
+
+    await inventoryPage.abrirCarrito();
 
     await expect(cartPage.titulo).toHaveText('Your Cart');
     await expect(cartPage.items).toHaveCount(1);
@@ -31,9 +34,11 @@ test.describe('Carrito', () => {
   test('quitar producto del carrito por nombre', async ({ inventoryPage }) => {
     const producto = products.backpack;
 
-    await inventoryPage.AgregaProducto(producto);
-    await expect(inventoryPage.cartbabge).toHaveText('1');
+    await inventoryPage.agregarProducto(producto);
+    expect(await inventoryPage.cantidadEnCarrito()).toBe(1);
+
     await inventoryPage.quitarProductoDelCarrito(producto);
-    await expect(inventoryPage.cartbabge).toHaveCount(0);
+
+    expect(await inventoryPage.cantidadEnCarrito()).toBe(0);
   });
 });

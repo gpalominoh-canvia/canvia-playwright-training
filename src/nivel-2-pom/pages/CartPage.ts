@@ -18,22 +18,11 @@ export class CartPage extends BasePage {
     this.contadorItems = page.locator('[data-test="shopping-cart-badge"]');
   }
 
-  async addProduct() {
-    await this.botonContinuarComprando.click();
-    await this.page.locator('[data-test="add-to-cart-sauce-labs-bike-light"]').click();
-  }
-
-  async cantidadProductos(): Promise<number> {
-    return await this.items.count();
-  }
-
-  async cantidadEnCarrito(): Promise<string | null> {
-    return await this.contadorItems.textContent();
-  }
-
   itemByName(productName: string): Locator {
     return this.items.filter({
-      has: this.page.locator('[data-test="inventory-item-name"]', { hasText: productName }),
+      has: this.page.locator('[data-test="inventory-item-name"]', {
+        hasText: productName,
+      }),
     });
   }
 }
