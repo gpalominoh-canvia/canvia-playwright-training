@@ -83,12 +83,34 @@ jobs:
           path: playwright-report/cucumber.html
           retention-days: 7
 
+  cucumber-screenplay:
+    name: Cucumber BDD + Screenplay
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Instalar navegador
+        run: npx playwright install --with-deps chromium
+      - name: Ejecutar BDD + Screenplay (nivel 4.1)
+        run: npm run test:nivel-4.1
+      - name: Publicar reporte
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cucumber-screenplay-report
+          path: playwright-report/cucumber-nivel-4.1.html
+          retention-days: 7
+
   # Job agregador: es el único check requerido por la protección de ramas.
   # Pasa solo si TODOS los jobs anteriores pasaron.
   ci-ok:
     name: CI OK
     if: always()
-    needs: [calidad, playwright, cucumber]
+    needs: [calidad, playwright, cucumber, cucumber-screenplay]
     runs-on: ubuntu-latest
     steps:
       - name: Verificar resultados
@@ -96,9 +118,11 @@ jobs:
           echo "calidad=${{ needs.calidad.result }}"
           echo "playwright=${{ needs.playwright.result }}"
           echo "cucumber=${{ needs.cucumber.result }}"
+          echo "cucumber-screenplay=${{ needs.cucumber-screenplay.result }}"
           if [ "${{ needs.calidad.result }}" != "success" ] || \
              [ "${{ needs.playwright.result }}" != "success" ] || \
-             [ "${{ needs.cucumber.result }}" != "success" ]; then
+             [ "${{ needs.cucumber.result }}" != "success" ] || \
+             [ "${{ needs.cucumber-screenplay.result }}" != "success" ]; then
             echo "::error::Al menos un job falló."
             exit 1
           fi
